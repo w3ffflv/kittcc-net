@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-rhiax=s(ahum3@p3g6a3m(rw^q*5r(@5wgl4jenhh6c3f#@_6(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CSRF_TRUSTED_ORIGINS = ['https://www.kittcc.net']
+CSRF_TRUSTED_ORIGINS = ['https://*.kittcc.net']
 ALLOWED_HOSTS = ['*']
 
 
