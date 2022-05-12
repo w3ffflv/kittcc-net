@@ -58,7 +58,7 @@ ROOT_URLCONF = 'kittcc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': ['/home/www/kittcc.net/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
