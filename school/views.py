@@ -1,4 +1,5 @@
 from curses.ascii import HT
+from urllib import request
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.template import loader
@@ -22,4 +23,14 @@ def contact(request):
     return HttpResponse(template.render({}, request))
 
 class ProfileView(LoginRequiredMixin,TemplateView):
+    if request.method == 'POST':
+        pirmdiena = request.POST['pirmdiena']
+        otrdiena = request.POST['otrdiena']
+        tresdiena = request.POST['tresdiena']
+        ceturdiena = request.POST['ceturdiena']
+        piekdiena = request.POST['piekdiena']
+        print(pirmdiena,otrdiena,tresdiena,ceturdiena,piekdiena)
+         
+        
+
     template_name = 'accounts/profile.html'
