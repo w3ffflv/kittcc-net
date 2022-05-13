@@ -5,7 +5,6 @@ from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .models import Details
 
 
 def home(request):
