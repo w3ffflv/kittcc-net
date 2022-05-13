@@ -24,6 +24,22 @@
 			
 			
 			<p>Welcome back,  {{ user }}!</p>
+			<form action="" method="POST">
+				{% csrf_token %}
+				<br>
+				<input type="text" name="pirmdiena" placeholder="Pirmdiena" >
+				<br>
+				<input type="text" name="otrdiena" placeholder="Otrdiena" >
+				<br>
+				<input type="text" name="tresdiena" placeholder="Trešdiena" >
+				<br>
+				<input type="text" name="ceturdiena" placeholder="Ceturdiena" >
+				<br>
+				<input type="text" name="piekdiena" placeholder="Piekdiena" >
+				<input type="submit" value="Iesniegt ēdienkarti">
+			
+
+			</form>
 			<div>
 			<table>
 					
