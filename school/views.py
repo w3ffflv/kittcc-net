@@ -8,13 +8,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
-    if request.method == 'POST':
-        pirmdiena = request.POST['pirmdiena']
-        otrdiena = request.POST['otrdiena']
-        tresdiena = request.POST['tresdiena']
-        ceturdiena = request.POST['ceturdiena']
-        piekdiena = request.POST['piekdiena']
-        print(pirmdiena,otrdiena,tresdiena,ceturdiena,piekdiena)
     return render(request,'home.html')
 
 def index(request):
