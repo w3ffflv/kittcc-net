@@ -23,6 +23,7 @@ def contact(request):
     return HttpResponse(template.render({}, request))
 
 class ProfileView(LoginRequiredMixin,TemplateView):
+    template_name = 'accounts/profile.html'
     if request.method == 'POST':
         pirmdiena = request.POST['pirmdiena']
         otrdiena = request.POST['otrdiena']
@@ -33,4 +34,4 @@ class ProfileView(LoginRequiredMixin,TemplateView):
          
         
 
-    template_name = 'accounts/profile.html'
+   
