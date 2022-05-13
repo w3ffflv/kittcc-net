@@ -26,9 +26,9 @@
 			<p>Welcome back,  {{ user.skola }}!</p>
 		
 			<div>
-				{% for instance in data %}
 			<table>
 					
+				{% for instance in data %}
 
 					<tr>
 						<td>Skola: {{ instance.fields.skola }}</td>
@@ -50,8 +50,9 @@
 						<td> %</td>
 						<td>Porciju</td>
 					</tr>
+					{% endfor %}
 				</table>
-				{% endfor %}
+				
 			</div>
 		</div>
 	</body>

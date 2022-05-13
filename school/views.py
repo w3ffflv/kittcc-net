@@ -8,7 +8,41 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 def home(request):
     template = loader.get_template('home.html')
-    return HttpResponse(template.render({},request))
+    School=School.objects.all()
+    if request.method == ['POST']:
+        username = request.POST['username']
+        password = request.POST['password']
+        skola = request.POST['skola']
+        novads = request.POST['novads']
+        skolenuskaits = request.POST['skolenuskaits']
+        apestas_porcijas = request.POST['apestas_porcijas']
+        pirmdiena = request.POST['pirmdiena']
+        otrdiena = request.POST['otrdiena']
+        tresdiena = request.POST['tresdiena']
+        ceturdiena = request.POST['ceturdiena']
+        piekdiena = request.POST['piekdiena']
+        obj = School()
+        obj.username = username
+        obj.password = password
+        obj.skola = skola
+        obj.novads = novads
+        obj.skolenuskaits = skolenuskaits
+        obj.apestas_porcijas = apestas_porcijas
+        obj.pirmdiena = pirmdiena
+        obj.otrdiena = otrdiena
+        obj.tresdiena = tresdiena
+        obj.ceturdiena = ceturdiena
+        obj.piekdiena = piekdiena
+        obj.save()
+
+        from django.core import serializers
+
+        data = serializers.serialize("python",School.objects.all())
+        context = {
+            'data':data,
+        }
+
+    return HttpResponse(template.render({},request),context)
 
 def index(request):
     template = loader.get_template('index.html')
