@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
-from . models import Edienkarte
 
 
 def home(request):
