@@ -1,13 +1,13 @@
 from curses.ascii import HT
 from urllib import request
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
-    template = loader.get_template('home.html')
     if request.method == 'POST':
         pirmdiena = request.POST['pirmdiena']
         otrdiena = request.POST['otrdiena']
@@ -15,7 +15,7 @@ def home(request):
         ceturdiena = request.POST['ceturdiena']
         piekdiena = request.POST['piekdiena']
         print(pirmdiena,otrdiena,tresdiena,ceturdiena,piekdiena)
-    return HttpResponse(template.render({},request))
+    return render(request,'home.html')
 
 def index(request):
     template = loader.get_template('index.html')
