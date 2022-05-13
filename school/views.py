@@ -9,22 +9,8 @@ from . models import Edienkarte
 
 def home(request):
     template = loader.get_template('home.html')
-    Edienkarte=Edienkarte.objects.all()
-    if request.method == 'POST':
-        pirmdiena = request.POST['pirmdiena']
-        otrdiena = request.POST['otrdiena']
-        tresdiena = request.POST['tresdiena']
-        ceturdiena = request.POST['ceturdiena']
-        piekdiena = request.POST['piekdiena']
-        print(pirmdiena,otrdiena,tresdiena,ceturdiena,piekdiena)
-        obj = Edienkarte()
-        obj.pirmdiena = pirmdiena
-        obj.otrdiena = otrdiena
-        obj.tresdiena = tresdiena
-        obj.ceturdiena = ceturdiena
-        obj.piekdiena = piekdiena
-        obj.save()
-    return HttpResponse(template.render({},request),{'Edienkarte':Edienkarte})
+ 
+    return HttpResponse(template.render({},request))
 
 def index(request):
     template = loader.get_template('index.html')
