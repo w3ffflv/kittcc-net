@@ -26,30 +26,32 @@
 			<p>Welcome back,  {{ user }}!</p>
 		
 			<div>
+				{% for instance in data %}
 			<table>
 					
 
 					<tr>
-						<td>Skola: {{ skola }}</td>
+						<td>Skola: {{ instance.fields.skola }}</td>
 						<td></td>
 					</tr>
 
 					<tr>
-						<td>Skolenu Skaits: {{ skolenuskaits }}</td>
+						<td>Skolenu Skaits: {{ instance.fields.skolenuskaits }}</td>
 						<td></td>
 					</tr>
 
 					<tr>
-						<td>Novads: {{ novads }}</td>
+						<td>Novads: {{ instance.fields.novads }}</td>
 						<td></td>
 					</tr>
 
 					<tr>
-						<td>Apestās porcijas: {{ apestasporcijas }}</td>
+						<td>Apestās porcijas: {{ instance.fields.apestasporcijas }}</td>
 						<td> %</td>
 						<td>Porciju</td>
 					</tr>
 				</table>
+				{% endfor %}
 			</div>
 		</div>
 	</body>
