@@ -9,7 +9,7 @@ from .models import Details
 
 
 def home(request):
-
+     template = loader.get_template('home.html')
      if request.method == 'POST':
         skola = request.POST['skola']
         skolenuskaits = request.POST['skolenuskaits']
@@ -27,7 +27,6 @@ def home(request):
         context = {
             'data':data,
         }
-        template = loader.get_template('home.html')
         return HttpResponse(template.render({},request))
 
 @login_required()
