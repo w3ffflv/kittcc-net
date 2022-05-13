@@ -84,14 +84,14 @@ import pymysql
 pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db',
-        'USER': 'root',
-        'PASS' : '',
-        'HOST' : 'localhost',
-        'PORT' : '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'db',
+        #'USER': 'root',
+        #'PASS' : '',
+        #'HOST' : 'localhost',
+        #'PORT' : '3306',
     }
 }
 
