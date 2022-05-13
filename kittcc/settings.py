@@ -34,7 +34,7 @@ if 'IS_DJANGO_DEBUG_FALSE' in os.environ:
 else:
     SECRET_KEY = 'django-insecure-rhiax=s(ahum3@p3g6a3m(rw^q*5r(@5wgl4jenhh6c3f#@_6('
     DEBUG = True
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
     
 CSRF_TRUSTED_ORIGINS = ['https://*.kittcc.net']
 
