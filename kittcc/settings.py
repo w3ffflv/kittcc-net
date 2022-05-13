@@ -136,11 +136,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "staticfiles",
+STATIC_ROOT = '/home/www/kittcc.net/static/'
+#STATICFILES_DIRS = [   BASE_DIR / "staticfiles",] 
 
-] 
-STATIC_ROOT = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
