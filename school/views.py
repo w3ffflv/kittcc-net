@@ -27,7 +27,7 @@ def home(request):
         context = {
             'data':data,
         }
-        return HttpResponse(template.render({},request))
+        return HttpResponse(template.render({},request),context)
 
 @login_required()
 def index(request):
