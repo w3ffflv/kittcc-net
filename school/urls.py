@@ -15,6 +15,6 @@ urlpatterns = [
      path('home/', views.home, name="home"),
 
      # Django Auth
-     path('accounts/login', auth_views.LoginView.as_view(template_name ="accounts/login.html"), name='login'),
+     path('accounts/login', auth_views.LoginView.as_view(template_name ="index.html"), name='login'),
   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
