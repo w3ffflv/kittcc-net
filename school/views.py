@@ -24,7 +24,7 @@ def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
 
-class ProfileView(LoginRequiredMixin,TemplateView,request):
+class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
     
          
