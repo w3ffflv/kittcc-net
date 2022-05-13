@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from xmlrpc.client import FastParser
 
 
 
@@ -25,13 +26,18 @@ PROJECT_DIR = os.path.join(BASE_DIR, "school")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rhiax=s(ahum3@p3g6a3m(rw^q*5r(@5wgl4jenhh6c3f#@_6('
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if 'IS_DJANGO_DEBUG_FALSE' in os.environ:
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
+    DEBUG = False
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+else:
+    SECRET_KEY = 'django-insecure-rhiax=s(ahum3@p3g6a3m(rw^q*5r(@5wgl4jenhh6c3f#@_6('
+    DEBUG = True
+    ALLOWED_HOSTS = []
+    
 CSRF_TRUSTED_ORIGINS = ['https://*.kittcc.net']
-ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
