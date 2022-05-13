@@ -28,7 +28,7 @@ PROJECT_DIR = os.path.join(BASE_DIR, "school")
 
 
 if 'IS_DJANGO_DEBUG_FALSE' in os.environ:
-    ALLOWED_HOSTS = [os.environ['SITENAME','http://www.kittcc.net']]
+    ALLOWED_HOSTS = [os.environ['SITENAME','www.kittcc.net']]
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 else:
