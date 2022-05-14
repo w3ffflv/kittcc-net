@@ -1,9 +1,9 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
-from django.shortcuts import render,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from school.models import Student
+from school.models import Student,models
 
 
 
@@ -26,7 +26,15 @@ def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
 
-class ProfileView(LoginRequiredMixin,TemplateView):
-    template_name = 'accounts/profile.html'
+def login(request):
+    if request.method == 'POST':
+        username = models.CharField(max_length=100)
+        password = models.CharField(max_length=100)
+        skola = models.CharField(max_length=100)
+        novads = models.CharField(max_length=100)
+        skolenuskaits = models.CharField(max_length=100)
+        apestasporcijas = models.CharField(max_length=100)
+    return render(request,'index.html')
+
     
 
