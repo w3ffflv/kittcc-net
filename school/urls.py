@@ -4,6 +4,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import list_posts
 
 
 urlpatterns = [
@@ -12,7 +13,9 @@ urlpatterns = [
      path('about/', views.about, name="about"),
      path('contact/', views.contact, name="contact"),
      path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
-     path('home/', views.home, name="home"),
+     path('home/', list_posts),
+     
+    
 
      # Django Auth
      path('accounts/login', auth_views.LoginView.as_view(template_name ="index.html"), name='login'),
