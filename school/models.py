@@ -8,6 +8,7 @@ class Schoolsearch(models.Model):
 
     class Meta:
         db_table="auth_user"
-        managed = True
+        managed = False
+        unique_together = (('auth_user', 'Schoolsearch'),)
         
  
