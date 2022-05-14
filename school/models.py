@@ -7,4 +7,4 @@ class Student(models.Model):
     skolenuskaits = models.CharField(max_length=100)
     apestasporcijas = models.CharField(max_length=100)
     class Meta:
-        db_table = "auth_user"
+        db_table = "students"
