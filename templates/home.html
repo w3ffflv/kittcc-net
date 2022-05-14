@@ -11,34 +11,39 @@ Home
     <h2>Home Page</h2>
     
     
-    
-    <button> PROFILE </button>
-    
- 
-<table border="1">
-    <thead>
-      <tr>
-        <th>Skolas ID</th>
-		<th>Skola</th>
-		<th>Novads</th>
-		<th>Skolenu skaits</th>
-		<th>Apestās porcijas</th>
-      </tr>
-    </thead>
-    <tbody>
-	{% for stud in student %}  
-      <tr>
-        <td>{{stud.id}}</td>
-        <td>{{stud.skola}}</td>
-		<td>{{stud.novads}}</td>
-		<td>{{stud.skolenuskaits}}</td>
-		<td>{{stud.apestasporcijas}}</td>
-      </tr>
-	  {% endfor %} 
-	</tbody>
-</table>	   
- </div>
+    <div>
+			<table>
+					
+				
+
+					<tr>
+						
+						<td>Skola: {{stud.skola}}</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Skolenu Skaits: {{stud.novads}}</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Novads: {{stud.skolenuskaits}}</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Apestās porcijas: {{stud.apestasporcijas}}</td>
+						<td> %</td>
+						<td>Porciju</td>
+					</tr>
+					
+				</table>
+				
+			</div>
 </center>
+ 
+
 
 
 {% endblock %}
