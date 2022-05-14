@@ -9,6 +9,6 @@ class Schoolsearch(models.Model):
     class Meta:
         db_table="auth_user"
         managed = False
-        unique_together = (('auth_user', 'Schoolsearch'),)
+        unique_together = (('skola', 'novads'),('skolenuskaits'),('apestasporcijas'),)
         
  
