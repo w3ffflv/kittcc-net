@@ -11,7 +11,7 @@ def home(request):
         'data': skola
     }
     template = loader.get_template('home.html')
-    return HttpResponse(template.render({},request))
+    return HttpResponse(template.render({},request),context)
 
 def index(request):
     template = loader.get_template('index.html')
