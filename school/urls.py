@@ -13,7 +13,7 @@ urlpatterns = [
      path('about/', views.about, name="about"),
      path('contact/', views.contact, name="contact"),
      path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
-     path('home/', list_posts),
+     path('home/', views.home, name="home"),
      
     
 
