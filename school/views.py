@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
-from school.models import Student,models
+from school.models import Student
 
 
 
@@ -11,7 +11,7 @@ from school.models import Student,models
 
 def home(request):
     students = Student.objects.all()
-    return render(request,"home.html",{'student':students})
+    return render(request,"show.html",{'student':students})
 
 
 def index(request):
@@ -26,15 +26,7 @@ def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
 
-def login(request):
-    if request.method == 'POST':
-        username = models.CharField(max_length=100)
-        password = models.CharField(max_length=100)
-        skola = models.CharField(max_length=100)
-        novads = models.CharField(max_length=100)
-        skolenuskaits = models.CharField(max_length=100)
-        apestasporcijas = models.CharField(max_length=100)
-    return render(request,'index.html')
-
+class ProfileView(LoginRequiredMixin,TemplateView):
+    template_name = 'accounts/profile.html'
     
 
