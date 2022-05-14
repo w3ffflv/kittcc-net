@@ -1,4 +1,3 @@
-from tkinter import Scrollbar
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.template import loader
