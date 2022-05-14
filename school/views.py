@@ -14,8 +14,8 @@ def home(request):
     return render(request,"home.html",{'student':students})
 
 
-def index(request):
-    template = loader.get_template('index.html')
+def login(request):
+    template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
 
 def about(request):
@@ -25,6 +25,9 @@ def about(request):
 def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
+
+
+
 
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
