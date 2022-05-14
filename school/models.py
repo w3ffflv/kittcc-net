@@ -8,5 +8,6 @@ class Schoolsearch(models.Model):
 
     class Meta:
         db_table="auth_user"
+        managed = False
         
  
