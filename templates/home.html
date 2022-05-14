@@ -7,10 +7,28 @@
 Home
 </h1>
 
-    
+<table border="1">
+    <thead>
+      <tr>
+        <th>Skolas ID</th>
+		<th>Skola</th>
+		<th>Novads</th>
+		<th>Skolenu skaits</th>
+		<th>Apestās porcijas</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for stud in student %}  
+      <tr>
+        <td>{{stud.id}}</td>
+        <td>{{stud.skola}}</td>
+		<td>{{stud.novads}}</td>
+		<td>{{stud.skolenuskaits}}</td>
+		<td>{{stud.apestasporcijas}}</td>
+      </tr>
+	  {% endfor %} 
+	</tbody>
+</table>	    
 
-
-
-</form>
 
 {% endblock %}

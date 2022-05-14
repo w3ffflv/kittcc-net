@@ -1,14 +1,18 @@
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.template import loader
+from django.shortcuts import render,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from school.models import Student
+
 
 
 
 
 def home(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render({},request))
+    students = Student.objects.all()
+    return render(request,"home.html",{'student':students})
+
 
 def index(request):
     template = loader.get_template('index.html')
