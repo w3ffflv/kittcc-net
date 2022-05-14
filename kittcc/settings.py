@@ -91,14 +91,14 @@ WSGI_APPLICATION = 'kittcc.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'db',
-        #'USER': 'root',
-        #'PASS' : '',
-        #'HOST' : 'localhost',
-        #'PORT' : '3306',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'othbpjti_skola',
+        'USER': 'othbpjti_skola2022',
+        'PASSWORD' : 's[Qe6mG]v6TR',
+        'HOST' : '192.236.178.44',
+        'PORT' : '3306',
     }
 }
 
