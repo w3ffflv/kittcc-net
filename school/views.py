@@ -3,15 +3,14 @@ from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from school.models import School
+from school.models import Schoolsearch
+
 
 
 def home(request):
-    skola = School.objects.all()
-    context = {
-        'data': skola
-    }
+    result = Schoolsearch.objects.all()
     template = loader.get_template('home.html')
-    return HttpResponse(template.render({},request),context)
+    return HttpResponse(template.render({},request), {"Schoolsearch": result})
 
 def index(request):
     template = loader.get_template('index.html')
@@ -26,7 +25,6 @@ def contact(request):
     return HttpResponse(template.render({}, request))
 
 class ProfileView(LoginRequiredMixin,TemplateView):
-    
     template_name = 'accounts/profile.html'
     
 

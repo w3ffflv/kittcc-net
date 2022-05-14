@@ -7,57 +7,31 @@
 Home
 </h1>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <br>
-    <input type="text" name="username" placeholder="Username" >
-    <br>
+    <center>
 
-    <br>
-    <input type="text" name="password" placeholder="Password" >
-    <br>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Skola</th>
+                <th>Novads</th>
+                <th>Skolēnu skaits</th>
+                <th>Apēstās porcijas %</th>
+            </tr>
+            {% for displaydata in Schoolsearch %}
+            <tr>
+                <td>{{displaydata.id}}</td>
+                <td>{{displaydata.skola}}</td>
+                <td>{{displaydata.novads}}</td>
+                <td>{{displaydata.skolenuskaits}}</td>
+                <td>{{displaydata.apestasporcijas}}</td>
 
-    <br>
-    <input type="text" name="skola" placeholder="Skola" >
-    <br>
-
-    <br>
-    <input type="text" name="skolenuskaits" placeholder="Skolēnu skaits" >
-    <br>
-
-    <br>
-    <input type="text" name="novads" placeholder="Novads" >
-    <br>
-
-    <br>
-    <input type="text" name="apestas_porcijas" placeholder="Apēstās porcijas" >
-    <br>
-
-    <br>
-    <input type="text" name="pirmdiena" placeholder="Pirmdiena" >
-    <br>
-
-    <br>
-    <input type="text" name="otrdiena" placeholder="Otrdiena" >
-    <br>
-
-    <br>
-    <input type="text" name="tresdiena" placeholder="Trešdiena" >
-    <br>
-    <br>
-
-    <input type="text" name="ceturdiena" placeholder="Ceturdiena" >
-    <br>
-    <br>
-    <input type="text" name="piekdiena" placeholder="Piekdiena" >
-    <br>
-    <br>
-    <input type="submit" value="Iesniegt">
-    <br>
+            </tr>
+            {% end for %}
+        </table>
     
-    <p>skola: {{ post.skola }}</p>
-    <p>skolenu skaits:  {{ post.skolenuskaits }} </p>
-    
+    </center>
+
+
 
 </form>
 
