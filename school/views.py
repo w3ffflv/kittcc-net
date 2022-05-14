@@ -11,7 +11,7 @@ from school.models import Student
 
 def home(request):
     students = Student.objects.all()
-    return render(request,"show.html",{'student':students})
+    return render(request,"home.html",{'student':students})
 
 
 def index(request):
