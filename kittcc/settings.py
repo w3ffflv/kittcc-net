@@ -99,6 +99,10 @@ DATABASES = {
         'PASSWORD' : 's[Qe6mG]v6TR',
         'HOST' : '192.236.178.44',
         'PORT' : '3306',
+        'OPTIONS': {
+        'sql_mode': 'traditional',
+    }
+
     }
 }
 
