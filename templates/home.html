@@ -7,29 +7,7 @@
 Home
 </h1>
 
-    <center>
-
-        <table border="1">
-            <tr>
-                <th>Id</th>
-                <th>Skola</th>
-                <th>Novads</th>
-                <th>Skolēnu skaits</th>
-                <th>Apēstās porcijas %</th>
-            </tr>
-            {% for displaydata in Schoolsearch %}
-            <tr>
-                <td>{{displaydata.id}}</td>
-                <td>{{displaydata.skola}}</td>
-                <td>{{displaydata.novads}}</td>
-                <td>{{displaydata.skolenuskaits}}</td>
-                <td>{{displaydata.apestasporcijas}}</td>
-
-            </tr>
-            {% end for %}
-        </table>
     
-    </center>
 
 
 
