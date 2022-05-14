@@ -11,7 +11,6 @@ def home(request):
     template = loader.get_template('home.html')
     return HttpResponse(template.render({},request))
 
-@login_required()
 def index(request):
     template = loader.get_template('index.html')
     
