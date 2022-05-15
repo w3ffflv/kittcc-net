@@ -5,16 +5,19 @@ from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-def welcome(request):
-    template = loader.get_template('welcome.html')
-    return HttpResponse(template.render({}, request))
+def logut(request):
+    return render(request,"home.html")
 
 def login(request):
     template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
 
-def register(request):
-    template = loader.get_template('register.html')
+def about(request):
+    template = loader.get_template('about.html')
+    return HttpResponse(template.render({}, request))
+
+def contact(request):
+    template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
 
 
