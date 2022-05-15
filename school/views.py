@@ -17,7 +17,7 @@ def register(request):
         lietotaji.password = request.POST['password']
         lietotaji.repassword = request.POST['repassword']
         lietotaji.skola = request.POST['skola']
-        lietotaji.skolenuskaits = request.POST['usskolenuskaitsername']
+        lietotaji.skolenuskaits = request.POST['skolenuskaits']
         lietotaji.novads = request.POST['novads']
         if lietotaji.password != lietotaji.repassword:
             return HttpResponseRedirect(template.render({}, request))
