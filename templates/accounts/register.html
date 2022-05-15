@@ -24,6 +24,9 @@
 			<form action="register" method="POST">
 				{% csrf_token %}
 				
+				{% for msg in messages %}
+				{{messages}}
+				{% endfor %}
 			
 				<input type="text" name="username" placeholder="Username" id="username" required>
 				<input type="password" name="password" placeholder="Password" id="password" required>
