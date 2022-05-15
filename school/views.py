@@ -42,10 +42,7 @@ def register(request):
     return HttpResponse(template.render({}, request))
 
 def login(request):
-    con = MySQLdb.connect(host="192.236.178.44",user="othbpjti_skola2022",password="s[Qe6mG]v6TR",database="othbpjti_skola")
-    cursor = con.cursor()
-    username = "select username from school_lietotaji"
-    password = "select password from school_lietotaji"
+
     template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
 
