@@ -21,13 +21,8 @@ def register(request):
         lietotaji.skola = request.POST['skola']
         lietotaji.skolenuskaits = request.POST['skolenuskaits']
         lietotaji.novads = request.POST['novads']
-        if lietotaji.password != lietotaji.repassword:
-            messages.info(request,'paroles nesakrīt')
-        elif lietotaji.username == "" or lietotaji.password == "":
-            messages.info(request,'Lietotāja vārds vai parole nevar būt tukšas')
-            return  HttpResponseRedirect(template.render({}, request))
-        else:
-            lietotaji.save()    
+        
+        lietotaji.save()    
     template = loader.get_template('accounts/register.html')
     return HttpResponse(template.render({}, request))
 
