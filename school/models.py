@@ -1,5 +1,4 @@
-from statistics import mode
-from unittest.util import _MAX_LENGTH
+
 from django.db import models
 
 class Lietotaji(models.Model):
