@@ -8,7 +8,7 @@ urlpatterns = [
      path('accounts/logout', views.logout, name="logout"),
      path('about/', views.about, name="about"),
      path('contact/', views.contact, name="contact"),
-     path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
+     path('accounts/profile/', views.profile, name="profile"),
      path('home/', views.home, name="home"),
   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
