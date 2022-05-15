@@ -1,6 +1,6 @@
 from curses.ascii import HT
 from email import message
-import MySQLdb
+from MySQLdb import _mysql
 from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import redirect, render
@@ -15,7 +15,7 @@ def logout(request):
     return render(request,"home.html")
 
 def register(request):
-    con = MySQLdb.connect(host="192.236.178.44",user="othbpjti_skola2022",password="s[Qe6mG]v6TR",database="othbpjti_skola")
+    con = _mysql.connect(host="192.236.178.44",user="othbpjti_skola2022",passwd="s[Qe6mG]v6TR",db="othbpjti_skola")
     if request.method == "POST":
         lietotaji = Lietotaji()
 
