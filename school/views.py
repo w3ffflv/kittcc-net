@@ -32,34 +32,7 @@ def register(request):
     return HttpResponse(template.render({}, request))
 
 def login(request):
-    con = _mysql.connect(host='192.236.178.44',user='othbpjti_skola2022',database='othbpjti_skola',password='s[Qe6mG]v6TR')
-    cursor = con.cursor()
-    sqlusername = "select username from school_lietotaji"
-    sqlpassword = "select password from school_lietotaji" 
-    cursor.execute(sqlusername,sqlpassword)
-    u=[]
-    p=[]
-    for i in cursor:
-        u.append(i)
-    for j in cursor:
-        p.append(j)
-        res = list(map(itemgetter(0),u))
-        res2 = list(map(itemgetter(0),p))
-        if request.method == "POST":
-            username = request.POST['username']
-            password = request.POST['password']
-            i=1
-            k=len(res)
-            while i < k:
-                if res[i]==username and res[i] == password:
-                    return HttpResponse(render,'welcome.html',{'username':username})
-                    break
-                i+=1
-            else:
-                messages.info(request,"Parbaudiet Vardu vai paroli")    
-        
-       
-    return HttpResponse(template.render({}, request))
+
     template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
 
