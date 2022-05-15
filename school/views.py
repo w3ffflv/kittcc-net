@@ -1,13 +1,8 @@
-from curses.ascii import HT
-from email import message
 from MySQLdb import _mysql
 from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from django.views.generic.base import TemplateView
 from django.template import loader
-from django.contrib.auth.mixins import LoginRequiredMixin
-from operator import itemgetter
 from school.models import Lietotaji
 
 
