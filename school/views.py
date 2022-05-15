@@ -8,7 +8,6 @@ from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from operator import itemgetter
-import mysql
 from school.models import Lietotaji
 
 
@@ -16,7 +15,7 @@ def logout(request):
     return render(request,"home.html")
 
 def register(request):
-    con = mysql.connect(host="192.236.178.44",user="othbpjti_skola2022",password="s[Qe6mG]v6TR",database="othbpjti_skola")
+    con = MySQLdb.connect(host="192.236.178.44",user="othbpjti_skola2022",password="s[Qe6mG]v6TR",database="othbpjti_skola")
     if request.method == "POST":
         lietotaji = Lietotaji()
 
