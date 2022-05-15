@@ -10,7 +10,6 @@ def logout(request):
     return render(request,"home.html")
 
 def register(request):
-    con = _mysql.connect(host="192.236.178.44",user="othbpjti_skola2022",passwd="s[Qe6mG]v6TR",db="othbpjti_skola")
     if request.method == "POST":
         lietotaji = Lietotaji()
 
