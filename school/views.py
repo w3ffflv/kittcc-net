@@ -29,13 +29,12 @@ def register(request):
         lietotaji.ceturdiena = request.POST['ceturdiena']
         lietotaji.piekdiena = request.POST['piekdiena']
         if lietotaji.password != lietotaji.repassword:
-            return redirect('register')
+            return redirect('accounts/register')
         elif lietotaji.username == "" or lietotaji.password == "":
             message.info(request,'Lietotāja vārds vai parole nevar būt tukšas')
-            return redirect('register')
+            return redirect('accounts/register')
         else:
             lietotaji.save()    
-
 
     template = loader.get_template('accounts/register.html')
     return HttpResponse(template.render({}, request))
