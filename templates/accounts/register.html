@@ -18,15 +18,14 @@
         <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
-		
+
+	
 		<div class="login">
 			<h1>Login</h1>
 			<form action="register" method="POST">
 				{% csrf_token %}
 				
-				{% for msg in messages %}
-				{{msg}}
-				{% endfor %}
+				
 			
 				<input type="text" name="username" placeholder="Username" id="username" required>
 				<input type="password" name="password" placeholder="Password" id="password" required>
@@ -36,6 +35,11 @@
 				<input type="text" name="novads" placeholder="Novads" id="novads" required>
 				<input type="submit" value="Login">
 			</form>
+		</div>	
+		<div class="alert alert-danger" role="alert">
+			{% for msg in messages %}
+			{{msg}}
+			{% endfor %}
 		</div>
 	</body>
 </html>
