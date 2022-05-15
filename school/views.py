@@ -1,5 +1,5 @@
 from MySQLdb import _mysql
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.template import loader
@@ -26,10 +26,10 @@ def register(request):
         lietotaji.ceturdiena = request.POST['ceturdiena']
         lietotaji.piekdiena = request.POST['piekdiena']
         if lietotaji.password != lietotaji.repassword:
-            return redirect('accounts/register')
+            return HttpResponseRedirect(template.render({}, request))
         elif lietotaji.username == "" or lietotaji.password == "":
             messages.info(request,'Lietotāja vārds vai parole nevar būt tukšas')
-            return redirect('accounts/register')
+            return  HttpResponseRedirect(template.render({}, request))
         else:
             lietotaji.save()    
     template = loader.get_template('accounts/register.html')
