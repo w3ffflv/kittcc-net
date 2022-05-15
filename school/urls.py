@@ -10,6 +10,6 @@ urlpatterns = [
      path('contact/', views.contact, name="contact"),
      path('accounts/profile/', views.profile, name="profile"),
      path('home/', views.home, name="home"),
-     path('register/',views.register,name="register"),
+     path('accounts/register',views.register,name="register"),
   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
