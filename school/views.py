@@ -15,7 +15,7 @@ def register(request):
 
         lietotaji.username = request.POST['username']
         lietotaji.password = request.POST['password']
-        lietotaji.repassword = request.POST['password']
+        lietotaji.repassword = request.POST['repassword']
         lietotaji.skola = request.POST['skola']
         lietotaji.skolenuskaits = request.POST['usskolenuskaitsername']
         lietotaji.novads = request.POST['novads']
