@@ -25,7 +25,7 @@
 				{% csrf_token %}
 				
 				{% for msg in messages %}
-				{{message}}
+				{{msg}}
 				{% endfor %}
 			
 				<input type="text" name="username" placeholder="Username" id="username" required>
