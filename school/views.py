@@ -1,12 +1,44 @@
+from curses.ascii import HT
+from email import message
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
+from operator import itemgetter
+from school.models import Lietotaji
 
 
 def logout(request):
     return render(request,"home.html")
+
+def register(request):
+    if request.method =="POST":
+        lietotaji = Lietotaji()
+
+        lietotaji.username = request.POST['username']
+        lietotaji.password = request.POST['password']
+        lietotaji.repassword = request.POST['password']
+        lietotaji.skola = request.POST['skola']
+        lietotaji.skolenuskaits = request.POST['usskolenuskaitsername']
+        lietotaji.novads = request.POST['novads']
+        lietotaji.apestasporcijas = request.POST['apestasporcijas']
+        lietotaji.pirmdiena = request.POST['pirmdiena']
+        lietotaji.otrdiena = request.POST['otrdiena']
+        lietotaji.tresdiena = request.POST['tresdiena'] 
+        lietotaji.ceturdiena = request.POST['ceturdiena']
+        lietotaji.piekdiena = request.POST['piekdiena']
+        if lietotaji.password != lietotaji.repassword:
+            return redirect('register')
+        elif lietotaji.username == "" or lietotaji.password == "":
+            message.info(request,'Lietotāja vārds vai parole nevar būt tukšas')
+            return redirect('register')
+        else:
+            lietotaji.save()    
+
+
+    template = loader.get_template('accounts/register.html')
+    return HttpResponse(template.render({}, request))
 
 def login(request):
     template = loader.get_template('login.html')
