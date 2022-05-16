@@ -1,29 +1,11 @@
-
 from django.db import models
+from django.db import connections
 
-class Lietotaji(models.Model):
-    id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=254)
-    password = models.CharField(max_length=254)
-    repassword = models.CharField(max_length=254)
-    skola = models.CharField(max_length=254)
-    skolenuskaits = models.CharField(max_length=254)
-    novads = models.CharField(max_length=254)
-    apestasporcijas = models.CharField(max_length=254)
-    pirmdiena = models.CharField(max_length=254)
-    otrdiena = models.CharField(max_length=254)
-    tresdiena = models.CharField(max_length=254)
-    ceturdiena = models.CharField(max_length=254)
-    piekdiena = models.CharField(max_length=254)
-
+class Student(models.Model):   
+    
+    skola = models.CharField(max_length=100)
+    novads = models.CharField(max_length=100)
+    skolenuskaits = models.CharField(max_length=100)
+    apestasporcijas = models.CharField(max_length=100)
     class Meta:
-        db_table = "lietotaji"
-
-    def __str__(self):
-        return self.username
-    
-    empAuth_objects = models.Manager()
-    
-    
-
-
+        db_table = "students"

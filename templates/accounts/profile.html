@@ -21,44 +21,12 @@
 		</nav>
 		<div class="content">
 			<h2>Home Page</h2>
+			
+			
 			<p>Welcome back, {{ user }}!</p>
+			
+			
 		</div>
-
-		<div class="content">
-
-			<table class="table table-striped">
-			  <thead>
-				<tr>
-				  <th>Skolas ID</th>
-			  <th>Skola</th>
-			  <th>Skolēnu skaits</th>
-			  <th>Novads</th>
-			  <th>Apestās porcijas</th>
-			  <th>Pirmdiena</th>
-			  <th>Otrdiena</th>
-			  <th>Tresdiena</th>
-			  <th>Ceturdiena</th>
-			  <th>Piekdiena</th>
-	  
-				</tr>
-			  </thead>
-			  <tbody>
-			{% for lietot in auth_users %}  
-				<tr>
-				  <td>{{lietot.id}}</td>
-				  <td>{{lietot.skola}}</td>
-			  <td>{{lietot.skolenuskaits}}</td>
-			  <td>{{lietot.novads}}</td>
-			  <td>{{lietot.apestasporcijas}}</td>
-			  <td>{{lietot.pirmdiena}}</td>
-			  <td>{{lietot.otrdiena}}</td>
-			  <td>{{lietot.tresdiena}}</td>
-			  <td>{{lietot.ceturdiena}}</td>
-			  <td>{{lietot.piekdiena}}</td>
-				</tr>
-			  {% endfor %} 
-			</tbody>
-		  </table>	
 	</body>
 </html>
 
