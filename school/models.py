@@ -14,5 +14,3 @@ class Lietotajs(models.Model):
     tresdiena = models.CharField(max_length=254)
     ceturdiena = models.CharField(max_length=254)
     piekdiena = models.CharField(max_length=254)
-class Meta:
-    db_table = "lietotajs" 
