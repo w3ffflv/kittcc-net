@@ -1,12 +1,12 @@
 from django.db import models
 from django.db import connections
 from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser 
 
 
-class Lietotaji(AbstractBaseUser):   
-   
-    email = models.EmailField(User('email address'), unique=True)
+class Lietotaji(AbstractUser):   
+    username = None
+    email = models.EmailField(_('email address'), unique=True)
     password = models.CharField(max_length=254)
     skola = models.CharField(max_length=100)
     novads = models.CharField(max_length=100)
