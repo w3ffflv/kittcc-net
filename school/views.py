@@ -10,13 +10,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
-    return HttpResponse(request,"home.html")
+    template = loader.get_template('home.html')
+    return HttpResponse(template.render({}, request))
+
 
 def login(request):
-    return HttpResponse(request,"index.html")
-
+    template = loader.get_template('login.html')
+    return HttpResponse(template.render({}, request))
+    
 def signup(request):
-    return HttpResponse(request,"signup.html")
+    template = loader.get_template('signup.html')
+    return HttpResponse(template.render({}, request))
+
 
     
 
