@@ -17,4 +17,4 @@ class Lietotaji(models.Model):
     piekdiena = models.CharField(max_length=254)
 
 class Meta:
-    db_table = "lietotaji"
+    db_table = "lietotaji"  
