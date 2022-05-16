@@ -13,7 +13,7 @@ def home(request):
     
     if 'q' in request.GET:
         q = request.GET['q']
-        lietotaji = Lietotaji.objects.filter(username__icontains=q)
+        lietotaji = Lietotaji.objects.filter(novads__icontains=q)
     else:
         lietotaji = Lietotaji.objects.all()
     return render(request,"home.html",{'lietotaji':lietotaji})
