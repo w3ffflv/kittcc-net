@@ -11,10 +11,12 @@ from .filters import OrderFilter
 
 
 def home(request):
-    lietotaji = Lietotaji.objects.all() 
-
-    myFilter = OrderFilter()
-    return render(request,"home.html",{'lietotaji':lietotaji,'myFilter':myFilter})
+    
+    if 'q' in request.GET:
+        q = request.GET['q']
+        lietotaji = Lietotaji.objects.filter(username__icontains=q)
+    lietotaji = Lietotaji.objects.all()
+    return render(request,"home.html",{'lietotaji':lietotaji})
 
 
 def login(request):
