@@ -1,3 +1,4 @@
+from imaplib import _Authenticator
 from operator import itemgetter
 from MySQLdb import _mysql
 from django import template
@@ -27,9 +28,11 @@ def register(request):
     return HttpResponse(template.render({}, request))
 
 def login(request):
-
-    template = loader.get_template('login.html')
-    return HttpResponse(template.render({}, request))
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = _Authenticator(username=username,password=password)
+    return render(request,'home.html')
 
 def home(request):
     lietotaji = Lietotaji.objects.all()
