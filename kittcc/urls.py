@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('school.urls')),
     
     
+    
 ]
 
 if settings.DEBUG:
