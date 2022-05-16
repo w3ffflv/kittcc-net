@@ -32,9 +32,9 @@ def login(request):
     return HttpResponse(template.render({}, request))
 
 def home(request):
-    
+    lietotaji = Lietotaji.objects.all()
     template = loader.get_template('home.html',)
-    return HttpResponse(template.render({}, request),{'lietotaji':school_lietotaji})
+    return HttpResponse(template.render({}, request),{'lietotaji':lietotaji})
 
 def profile(request):
     template = loader.get_template('accounts/profile.html')
