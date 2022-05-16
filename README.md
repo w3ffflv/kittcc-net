@@ -1,71 +1,104 @@
-# Insurance Management
-![developer](https://img.shields.io/badge/Developed%20By%20%3A-Sumit%20Kumar-red)
----
-## screenshots
-### Homepage
-![homepage snap](https://github.com/sumitkumar1503/insurancemanagement/blob/master/static/screenshots/homepage.png?raw=true)
-### Admin Dashboard
-![dashboard snap](https://github.com/sumitkumar1503/insurancemanagement/blob/master/static/screenshots/dashboard.png?raw=true)
-### Policy Record
-![invoice snap](https://github.com/sumitkumar1503/insurancemanagement/blob/master/static/screenshots/policyrecord.png?raw=true)
-### Policy 
-![doctor snap](https://github.com/sumitkumar1503/insurancemanagement/blob/master/static/screenshots/policy.png?raw=true)
----
-## Functions
-### Admin
-- Admin account can be created using createsuperuser command.
-- After login, admin can view/update/delete customer
-- Can view/add/update/delete policy category like Life, Health, Motor, Travel
-- Can view/add/update/delete policy
-- Can view total policy holder, approved policy holder, disapproved policy holder
-- Can approve policy, applied by customer
-- Can answer customer question
+# simple-django-project
+## Installation
 
-### Customer
-- Create account (no approval required by admin)
-- After login, can view all policy that are added by admin.
-- If customer likes any policy, then they can apply for it.
-- When customer will apply for any policy, it will go into pending status, admin can approve it.
-- Customer can check status of his policy under history section
-- Customer can ask question from admin. 
+### Prerequisites
 
----
+#### 1. Install Python
+Install ```python-3.7.2``` and ```python-pip```. Follow the steps from the below reference document based on your Operating System.
+Reference: [https://docs.python-guide.org/starting/installation/](https://docs.python-guide.org/starting/installation/)
 
-## HOW TO RUN THIS PROJECT
-- Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
-- Open Terminal and Execute Following Commands :
-```
-python -m pip install -r requirements.txt
-```
-- Download This Project Zip Folder and Extract it
-- Move to project folder in Terminal. Then run following Commands :
-```
-py manage.py makemigrations
-py manage.py migrate
-py manage.py runserver
-```
-- Now enter following URL in Your Browser Installed On Your Pc
-```
-http://127.0.0.1:8000/
+#### 2. Install MySQL
+Install ```mysql-8.0.15```. Follow the steps form the below reference document based on your Operating System.
+Reference: [https://dev.mysql.com/doc/refman/5.5/en/](https://dev.mysql.com/doc/refman/5.5/en/)
+#### 3. Setup virtual environment
+```bash
+# Install virtual environment
+sudo pip install virtualenv
+
+# Make a directory
+mkdir envs
+
+# Create virtual environment
+virtualenv ./envs/
+
+# Activate virtual environment
+source envs/bin/activate
 ```
 
-## CHANGES REQUIRED FOR CONTACT US PAGE
-- In settins.py file, You have to give your email and password
-```
-EMAIL_HOST_USER = 'youremail@gmail.com'
-EMAIL_HOST_PASSWORD = 'your email password'
-EMAIL_RECEIVING_USER = 'youremail@gmail.com'
-```
-- Login to gmail through host email id in your browser and open following link and turn it ON
-```
-https://myaccount.google.com/lesssecureapps
+#### 4. Clone git repository
+```bash
+git clone "https://github.com/Manisha-Bayya/simple-django-project.git"
 ```
 
+#### 5. Install requirements
+```bash
+cd simple-django-project/
+pip install -r requirements.txt
+```
 
-## Disclaimer
-This project is developed for demo purpose and it's not supposed to be used in real application.
+#### 6. Load sample data into MySQL
+```bash
+# open mysql bash
+mysql -u <mysql-user> -p
 
-## Feedback
-Any suggestion and feedback is welcome. You can message me on facebook
-- [Contact on Facebook](https://fb.com/sumit.luv)
-- [Subscribe my Channel LazyCoder On Youtube](https://youtube.com/lazycoderonline)
+# Give the absolute path of the file
+mysql> source ~/simple-django-project/world.sql
+mysql> exit;
+
+```
+#### 7. Edit project settings
+```bash
+# open settings file
+vim panorbit/settings.py
+
+# Edit Database configurations with your MySQL configurations.
+# Search for DATABASES section.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'world',
+        'USER': '<mysql-user>',
+        'PASSWORD': '<mysql-password>',
+        'HOST': '<mysql-host>',
+        'PORT': '<mysql-port>',
+    }
+}
+
+# Edit email configurations.
+# Search for email configurations
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '<your-email>'
+EMAIL_HOST_PASSWORD = '<your-email-password>'
+EMAIL_PORT = 587
+
+# save the file
+```
+#### 8. Run the server
+```bash
+# Make migrations
+python manage.py makemigrations
+python manage.py migrate
+
+# For search feature we need to index certain tables to the haystack. For that run below command.
+python manage.py rebuild_index
+
+# Run the server
+python manage.py runserver 0:8001
+
+# your server is up on port 8001
+```
+Try opening [http://localhost:8001](http://localhost:8001) in the browser.
+Now you are good to go.
+
+### 9. URLs
+#### Signup: [http://localhost:8001/signup](http://localhost:8001/signup)
+![](https://i.imgur.com/T1KkfXi.png)
+#### Login: [http://localhost:8001/login](http://localhost:8001/login)
+![](https://i.imgur.com/KvyiuU6.png)
+#### home for search: [http://localhost:8001/](http://localhost:8001/)
+![](https://i.imgur.com/234qAiS.png)
+#### country page: [http://localhost:8001/country/kenya](http://localhost:8001/country/kenya)
+![](https://i.imgur.com/3zh3YKd.png)
+#### Logout: [http://localhost:8001/logout](http://localhost:8001/logout)
+
