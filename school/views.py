@@ -32,7 +32,8 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = _Authenticator(username=username,password=password)
-    return render(request,'home.html')
+    template = loader.get_template('login.html')
+    return HttpResponse(template.render({}, request))
 
 def home(request):
     lietotaji = Lietotaji.objects.all()
