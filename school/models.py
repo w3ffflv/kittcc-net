@@ -1,6 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser
 
-class Lietotaji(models.Model):
+
+class Lietotaji(AbstractBaseUser):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=254)
     password = models.CharField(max_length=254)
