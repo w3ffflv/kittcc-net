@@ -83,6 +83,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'kittcc.wsgi.application'
+AUTH_USER_MODEL = 'school.Lietotaji'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

@@ -5,7 +5,7 @@ from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from school.models import Lietotaji
 from django.db.models import Q
-from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -35,7 +35,6 @@ def contact(request):
 
 
 
-@login_required(login_url='login.html')
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
     
