@@ -22,7 +22,7 @@ def login(request):
             login(request, user )
             return HttpResponseRedirect('home/')
         else:           
-            return HttpResponseRedirect('login.html')
+            return HttpResponseRedirect('login')
     template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
     
