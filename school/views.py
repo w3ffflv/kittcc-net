@@ -10,13 +10,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
-    return render(request,"home.html")
+    return HttpResponse(request,"home.html")
 
 def login(request):
-    return render(request,"index.html")
+    return HttpResponse(request,"index.html")
 
 def signup(request):
-    return render(request,"signup.html")
+    return HttpResponse(request,"signup.html")
 
     
 
