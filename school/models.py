@@ -1,9 +1,10 @@
 from django.db import models
 from django.db import connections
+from django.utils.deconstruct import deconstructible
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser 
 
-
+@deconstructible
 class Lietotaji(AbstractUser):   
     username = None
     email = models.EmailField(_('email address'), unique=True)
