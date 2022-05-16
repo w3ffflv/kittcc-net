@@ -7,7 +7,7 @@ from django.contrib.auth.models import AbstractUser
 @deconstructible
 class Lietotaji(AbstractUser):   
     username = None
-    email = models.EmailField(_('email address'), unique=True)
+    email = models.EmailField(User('email address'), unique=True)
     password = models.CharField(max_length=254)
     skola = models.CharField(max_length=100)
     novads = models.CharField(max_length=100)
