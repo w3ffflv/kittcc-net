@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractBaseUser
 
 
 class Lietotaji(AbstractBaseUser):   
-    username = None
+   
     email = models.EmailField(User('email address'), unique=True)
     password = models.CharField(max_length=254)
     skola = models.CharField(max_length=100)
