@@ -7,7 +7,7 @@ class Lietotaji(AbstractBaseUser):
     username = models.CharField(max_length=254)
     password = models.CharField(max_length=254)
     repassword = models.CharField(max_length=254)
-    skola = models.CharField(max_length=254)
+    skola = models.CharField(max_length=254, unique=True)
     skolenuskaits = models.CharField(max_length=254)
     novads = models.CharField(max_length=254)
     apestasporcijas = models.CharField(max_length=254)
@@ -19,7 +19,7 @@ class Lietotaji(AbstractBaseUser):
 
     USERNAME_FIELD = 'username'
 
-    REQUIRED_FIELDS = ['skola','skolenuskaits']    
+    REQUIRED_FIELDS = ['skola']    
     def __str__(self) -> str:
         return self.username
     class Meta:
