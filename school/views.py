@@ -45,7 +45,8 @@ def login(request):
         else:
             return render(request,"welcome.html")
 
-    return render(request,'')
+    template = loader.get_template('login.html')
+    return HttpResponse(template.render({}, request))
 
         
     
