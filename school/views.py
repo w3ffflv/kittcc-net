@@ -20,9 +20,9 @@ def login(request):
         user = authenticate(request, username = username , password = password)
         if user is None:
             login(request, user )
-            return HttpResponseRedirect(request, 'home/')
+            return HttpResponseRedirect('home/')
         else:           
-            return HttpResponseRedirect(request, 'login.html')
+            return HttpResponseRedirect('login.html')
     template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
     
