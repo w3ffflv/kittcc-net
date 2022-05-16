@@ -21,7 +21,7 @@ def register(request):
         lietotaji.skola = request.POST['skola']
         lietotaji.skolenuskaits = request.POST['skolenuskaits']
         lietotaji.novads = request.POST['novads']
-        
+
         lietotaji.save()    
     template = loader.get_template('accounts/register.html')
     return HttpResponse(template.render({}, request))
@@ -32,8 +32,9 @@ def login(request):
     return HttpResponse(template.render({}, request))
 
 def home(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render({}, request))
+    
+    template = loader.get_template('home.html',)
+    return HttpResponse(template.render({}, request),{'lietotaji':school_lietotaji})
 
 def profile(request):
     template = loader.get_template('accounts/profile.html')

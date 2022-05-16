@@ -23,48 +23,41 @@
 </nav>
     
     <div class="content">
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Skolas ID</th>
+        <th>Skola</th>
+        <th>Skolēnu skaits</th>
+        <th>Novads</th>
+        <th>Apestās porcijas</th>
+        <th>Pirmdiena</th>
+        <th>Otrdiena</th>
+        <th>Tresdiena</th>
+        <th>Ceturdiena</th>
+        <th>Piekdiena</th>
+
+          </tr>
+        </thead>
+        <tbody>
+      {% for lietot in lietotaji %}  
+          <tr>
+            <td>{{lietotaji.id}}</td>
+            <td>{{lietotaji.skola}}</td>
+        <td>{{lietotaji.skolenuskaits}}</td>
+        <td>{{lietotaji.novads}}</td>
+        <td>{{lietotaji.apestasporcijas}}</td>
+        <td>{{lietotaji.pirmdiena}}</td>
+        <td>{{lietotaji.otrdiena}}</td>
+        <td>{{lietotaji.tresdiena}}</td>
+        <td>{{lietotaji.ceturdiena}}</td>
+        <td>{{lietotaji.piekdiena}}</td>
+          </tr>
+        {% endfor %} 
+      </tbody>
+    </table>	
           
-          <tr>
-            <td>Skola: Krāslavas Valsts ģimnāzija</td>
-            <td></td>
-          </tr>
-    
-          <tr>
-            <td>Skolenu Skaits: 367</td>
-            <td></td>
-          </tr>
-    
-          <tr>
-            <td>Novads: Krāslava</td>
-            <td></td>
-          </tr>
-    
-          <tr>
-            <td>Apestās porcijas: 35.43%</td>
-            <td></td>
-            <td></td>
-          </tr>
-        <tr>
-            <td>Pirmdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Otrdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Trešdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Ceturdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Piekdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr>
       </div>
       <button type="button" class="btn btn-primary">Izmainīt ēdienkarti</button></tbody></table>
 
