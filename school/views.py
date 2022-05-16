@@ -3,7 +3,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.template import loader
 from school.models import Lietotaji
-
+import mysql as sql
+un=''
+pwd=''
 
 def logout(request):
     return render(request,"home.html")
@@ -24,25 +26,29 @@ def register(request):
     return HttpResponse(template.render({}, request))
 
 def login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        try:
-            user = Lietotaji.empAuth_objects.get(username=username,password=password)
-            if user is not None:
-                return HttpResponseRedirect(request, 'home.html', {})
-            else:
-                print("Someone tried to login and faield")
-                print("They  used username: {} and password: {}".format(username,password))
+    global un,pwd
+    if request.method=="POST":
+        m=sql.connect(host="192.236.178.44",user="othbpjti_skola2022",passwd="s[Qe6mG]v6TR",database='othbpjti_skola')
+        cursor=m.cursor()
+        d=request.POST
+        for key,value in d.items():
+            if key=="username":
+                un=value
+            if key=="password":
+                pwd=value
+        
+        c="select * from lietotaji where username='{}' and password='{}'".format(un,pwd)
+        cursor.execute(c)
+        t=tuple(cursor.fetchall())
+        if t==():
+            return render(request,'error.html')
+        else:
+            return render(request,"welcome.html")
 
-                return HttpResponseRedirect('')
-        except Exception as identifeir:
+    return render(request,'login.html')
 
-            return HttpResponseRedirect('')
-
-    else:
-        template = loader.get_template('')
-        return HttpResponse(template.render({}, request))
+        
+    
 
 def home(request):
     lietotaji = Lietotaji.objects.all()
