@@ -25,12 +25,10 @@ def login(request):
         else:           
             return HttpResponseRedirect(request, 'login.html')
     template = loader.get_template('home.html')
-    return HttpResponse
+    return HttpResponse(template.render({}, request))
     
 def signup(request):
     template = loader.get_template('signup.html')
     return HttpResponse(template.render({}, request))
-
-
     
 
