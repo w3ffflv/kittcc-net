@@ -3,15 +3,15 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
-from school.models import Student
+from school.models import Lietotaji
 
 
 
 
 
 def home(request):
-    students = Student.objects.all()
-    return render(request,"home.html",{'student':students})
+    lietotaji = Lietotaji.objects.all()
+    return render(request,"home.html",{'lietottaji':lietotaji})
 
 
 def login(request):

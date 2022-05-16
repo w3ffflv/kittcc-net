@@ -3,7 +3,8 @@
 {% block title %} Contact {% endblock %}
 
 {% block content %}
-
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <link href="{% static 'style.css' %}" rel="stylesheet">
@@ -13,7 +14,7 @@
 
   <title>Home</title> 
   </head>
-
+<body>
 <nav class="navtop">
   <div>
     <h1>KITTCC.NET</h1>
@@ -23,77 +24,43 @@
 </nav>
     
     <div class="content">
-          
-          <tr>
-            <td>Skola: Krāslavas Valsts ģimnāzija</td>
-            <td></td>
-          </tr>
-    
-          <tr>
-            <td>Skolenu Skaits: 367</td>
-            <td></td>
-          </tr>
-    
-          <tr>
-            <td>Novads: Krāslava</td>
-            <td></td>
-          </tr>
-    
-          <tr>
-            <td>Apestās porcijas: 35.43%</td>
-            <td></td>
-            <td></td>
-          </tr>
-        <tr>
-            <td>Pirmdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Otrdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Trešdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Ceturdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr><tr>
-            <td>Piekdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
-            <td></td>
-            <td></td>
-          </tr>
-      </div>
-      <button type="button" class="btn btn-primary">Izmainīt ēdienkarti</button></tbody></table>
 
-    
-    
-				{{stud.skola}}
-		    {{stud.novads}}
-				{{stud.skolenuskaits}}
-        {{stud.apestasporcijas}}
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Skolas ID</th>
+        <th>Skola</th>
+        <th>Skolēnu skaits</th>
+        <th>Novads</th>
+        <th>Apestās porcijas</th>
+        <th>Pirmdiena</th>
+        <th>Otrdiena</th>
+        <th>Tresdiena</th>
+        <th>Ceturdiena</th>
+        <th>Piekdiena</th>
 
- 
+          </tr>
+        </thead>
+        <tbody>
+      {% for lietot in lietotaji %}  
+          <tr>
+            <td>{{lietot.id}}</td>
+            <td>{{lietot.skola}}</td>
+        <td>{{lietot.skolenuskaits}}</td>
+        <td>{{lietot.novads}}</td>
+        <td>{{lietot.apestasporcijas}}</td>
+        <td>{{lietot.pirmdiena}}</td>
+        <td>{{lietot.otrdiena}}</td>
+        <td>{{lietot.tresdiena}}</td>
+        <td>{{lietot.ceturdiena}}</td>
+        <td>{{lietot.piekdiena}}</td>
+          </tr>
+        {% endfor %} 
+      </tbody>
+    </table>	
+  </body>
+</html>
 
 
 
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
