@@ -9,7 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
-    return render(request,"home.html")
+    template = loader.get_template('home.html')
+    return HttpResponse(template.render({}, request))
 
 
 def login(request):
