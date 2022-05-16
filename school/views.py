@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.contrib.auth import authenticate,login,logout
-
+from django.views.generic.base import TemplateView
 
 
 
@@ -21,10 +21,11 @@ def login(request):
         if user is None:
             login(request, user )
             template = loader.get_template('home.html')
-            return HttpResponseRedirect(template.render({}, request))
+            return HttpResponseRedirect(request, 'home.html')
         else:           
-            template = loader.get_template('login.html')
-            return HttpResponseRedirect(template.render({}, request))
+            return HttpResponseRedirect(request, 'login.html')
+    template = loader.get_template('home.html')
+    return HttpResponse
     
 def signup(request):
     template = loader.get_template('signup.html')
