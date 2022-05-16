@@ -16,6 +16,6 @@ class Lietotaji(models.Model):
     ceturdiena = models.CharField(max_length=254)
     piekdiena = models.CharField(max_length=254)
     class Meta:
-        db_table = "school_lietotaji"
+        db_table = "lietotaji"
 
 
