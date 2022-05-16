@@ -36,6 +36,7 @@ def home(request):
     return render(request,"home.html",{'lietotaji':lietotaji}) 
 
 def profile(request):
+    
     template = loader.get_template('accounts/profile.html')
     return HttpResponse(template.render({}, request))
 
