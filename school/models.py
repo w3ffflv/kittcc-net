@@ -11,7 +11,7 @@ class Lietotaji(AbstractBaseUser):
     skola = models.CharField(max_length=100)
     novads = models.CharField(max_length=100)
     skolenuskaits = models.CharField(max_length=100)
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ('username',)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
     class Meta:
         db_table = "lietotaji"
