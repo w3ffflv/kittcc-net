@@ -1,29 +1,99 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
+{% block title %} Contact {% endblock %}
 
-{% block scripts %}
-    {{ block.super }}
-    <script src="{% static 'js/home.js' %}"></script>
+{% block content %}
+
+<head>
+  <meta charset="utf-8">
+  <link href="{% static 'style.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+
+  <title>Home</title> 
+  </head>
+
+<nav class="navtop">
+  <div>
+    <h1>KITTCC.NET</h1>
+    <a href="/accounts/profile/"><i class="fas fa-user-circle"></i>Profile</a>
+    <a href="/accounts/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+  </div>
+</nav>
+    
+    <div class="content">
+          
+          <tr>
+            <td>Skola: Krāslavas Valsts ģimnāzija</td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td>Skolenu Skaits: 367</td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td>Novads: Krāslava</td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td>Apestās porcijas: 35.43%</td>
+            <td></td>
+            <td></td>
+          </tr>
+        <tr>
+            <td>Pirmdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Otrdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Trešdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Ceturdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Piekdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr>
+      </div>
+      <button type="button" class="btn btn-primary">Izmainīt ēdienkarti</button></tbody></table>
+
+    
+    
+				{{stud.skola}}
+		    {{stud.novads}}
+				{{stud.skolenuskaits}}
+        {{stud.apestasporcijas}}
+
+ 
+
+
+
 {% endblock %}
 
-{% block body %}
-{% include "navbar.html" %}
-<div class="container mt-5">
-	<h4 class="card-title mt-3 text-center">PanOrbit</h4>
-	<div class="row">
-		<div class="form-group input-group col-sm-10">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-search"></i> </span>
-			 </div>
-			<input name="" class="form-control search" placeholder="Enter 3 or more characters" type="text">
-		</div>
-		
-		<div class="form-group col-sm-2">
-			<button type="submit" class="btn btn-outline-success" id="search_submit"> Search  </button>
-		</div> 
-	</div>
-</div>
-<div class="container search_results">
-</div>
 
-{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
