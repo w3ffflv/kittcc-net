@@ -41,7 +41,7 @@ def login(request):
             return HttpResponseRedirect('')
 
     else:
-        template = loader.get_template('home.html')
+        template = loader.get_template('')
         return HttpResponse(template.render({}, request))
 
 def home(request):
