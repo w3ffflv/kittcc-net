@@ -33,8 +33,7 @@ def login(request):
 
 def home(request):
     lietotaji = Lietotaji.objects.all()
-    template = loader.get_template('home.html',)
-    return HttpResponse(template.render({}, request),{'lietotaji':lietotaji})
+    return render(request,"home.html",{'lietotaji':lietotaji}) 
 
 def profile(request):
     template = loader.get_template('accounts/profile.html')
