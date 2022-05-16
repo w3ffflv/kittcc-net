@@ -17,7 +17,7 @@ class Lietotaji(models.Model):
 
     USERNAME_FIELD = 'username'
 
-        
+    REQUIRED_FIELDS = ['skola','skolenuskaits']    
     def __str__(self) -> str:
         return self.username
     class Meta:
