@@ -1,8 +1,10 @@
 from django.db import models
 from django.db import connections
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractBaseUser
 
-class Lietotaji(models.Model):   
+
+class Lietotaji(AbstractBaseUser):   
     username = models.OneToOneField(User,primary_key=True, on_delete=models.CASCADE)
     password = models.CharField(max_length=254)
     skola = models.CharField(max_length=100)
