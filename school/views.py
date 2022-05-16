@@ -13,7 +13,7 @@ def home(request):
     return HttpResponse(template.render({}, request))
 
 
-def user_login(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
