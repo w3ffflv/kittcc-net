@@ -3,15 +3,13 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
-from school.models import Student
 
 
 
 
 
 def home(request):
-    students = Student.objects.all()
-    return render(request,"home.html",{'student':students})
+    return render(request,"home.html")
 
 
 def login(request):
