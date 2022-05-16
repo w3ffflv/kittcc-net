@@ -26,6 +26,8 @@ urlpatterns = [
     
     
 ]
-
+admin.site.site_header = 'Skolu Monitoringu Sistēma'
+admin.site.site_title = 'Admin portāls SkMoSi'
+admin.site.index_title = 'ADMIN'
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
