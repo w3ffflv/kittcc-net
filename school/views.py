@@ -15,11 +15,11 @@ def home(request):
     if 'q' in request.GET:
         q = request.GET['q']
         multiple_q = Q(Q(id__icontains=q) | Q(skola__icontains=q) | Q(skolenuskaits__icontains=q) | Q(novads__icontains=q) | Q(apestasporcijas__icontains=q) | Q(pirmdiena__icontains=q) | Q(otrdiena__icontains=q) | Q(tresdiena__icontains=q) | Q(ceturdiena__icontains=q) | Q(piekdiena__icontains=q) )
-        lietotaji = Lietotaji.objects.filter(multiple_q)
+        Lietotajs = Lietotajs.objects.filter(multiple_q)
 
     else:
-        lietotaji = Lietotaji.objects.all()
-    return render(request,"home.html",{'lietotaji':lietotaji})
+        lietotajs = Lietotajs.objects.all()
+    return render(request,"home.html",{'lietotajs':lietotajs})
 
 def login(request):
     template = loader.get_template('login.html')
