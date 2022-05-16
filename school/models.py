@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser
 
 class Lietotaji(AbstractBaseUser):
     id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=254)
+    username = models.CharField(max_length=254,unique=True)
     password = models.CharField(max_length=254)
     repassword = models.CharField(max_length=254)
     skola = models.CharField(max_length=254, unique=True)
