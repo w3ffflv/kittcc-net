@@ -10,8 +10,8 @@ from school.models import Lietotaji
 
 
 def home(request):
-    lietotaji = Lietotaji.objects.all()
-    return render(request,"home.html",{'lietottaji':lietotaji})
+    lietotaji = Lietotaji.objects.all() 
+    return render(request,"home.html",{'lietotaji':lietotaji})
 
 
 def login(request):
