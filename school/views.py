@@ -21,10 +21,10 @@ def user_login(request):
         if user is None:
             login(request, user )
             template = loader.get_template('home.html')
-            return HttpResponse(template.render({}, request))
+            return HttpResponseRedirect(template.render({}, request))
         else:           
             template = loader.get_template('login.html')
-            return HttpResponse(template.render({}, request))
+            return HttpResponseRedirect(template.render({}, request))
     
 def signup(request):
     template = loader.get_template('signup.html')
