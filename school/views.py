@@ -1,9 +1,5 @@
-from imaplib import _Authenticator
-from operator import itemgetter
-from MySQLdb import _mysql
 from django import template
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.template import loader
 from school.models import Lietotaji
@@ -31,9 +27,22 @@ def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = _Authenticator(username=username,password=password)
-    template = loader.get_template('login.html')
-    return HttpResponse(template.render({}, request))
+        try:
+            user = Lietotaji.empAuth_objects.get(username=username,password=password)
+            if user is not None:
+                return HttpResponseRedirect(request, 'home.html', {})
+            else:
+                print("Someone tried to login and faield")
+                print("They  used username: {} and password: {}".format(username,password))
+
+                return HttpResponseRedirect('')
+        except Exception as identifeir:
+
+            return HttpResponseRedirect('')
+
+    else:
+        template = loader.get_template('home.html')
+        return HttpResponse(template.render({}, request))
 
 def home(request):
     lietotaji = Lietotaji.objects.all()

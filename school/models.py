@@ -15,7 +15,15 @@ class Lietotaji(models.Model):
     tresdiena = models.CharField(max_length=254)
     ceturdiena = models.CharField(max_length=254)
     piekdiena = models.CharField(max_length=254)
+
     class Meta:
         db_table = "lietotaji"
+
+    def __str__(self):
+        return self.username
+    
+    empAuth_objects = models.Manager()
+    
+    
 
 
