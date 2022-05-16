@@ -4,6 +4,7 @@ from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from school.models import Lietotaji
+from .filters import OrderFilter
 
 
 
@@ -11,7 +12,9 @@ from school.models import Lietotaji
 
 def home(request):
     lietotaji = Lietotaji.objects.all() 
-    return render(request,"home.html",{'lietotaji':lietotaji})
+
+    myFilter = OrderFilter()
+    return render(request,"home.html",{'lietotaji':lietotaji,'myFilter':myFilter})
 
 
 def login(request):
