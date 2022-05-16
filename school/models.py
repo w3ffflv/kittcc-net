@@ -2,11 +2,11 @@ from django.db import models
 
 class Lietotaji(models.Model):
     id = models.AutoField(primary_key=True)
-    email = models.EmailField(verbose_name='email address',unique=True)
-    username = models.CharField(max_length=254,unique=True)
+    password = models.CharField(max_length=254)
+    username = models.CharField(max_length=254)
     password = models.CharField(max_length=254)
     repassword = models.CharField(max_length=254)
-    skola = models.CharField(max_length=254, unique=True)
+    skola = models.CharField(max_length=254)
     skolenuskaits = models.CharField(max_length=254)
     novads = models.CharField(max_length=254)
     apestasporcijas = models.CharField(max_length=254)
