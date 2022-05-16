@@ -18,11 +18,13 @@
   <title>Document</title>
 </head>
 <body>
+
 <nav class="navtop">
   <div>
     <h1>KITTCC.NET</h1>
     <a href="/accounts/profile/"><i class="fas fa-user-circle"></i>Profile</a>
     <a href="/accounts/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    <p>{{ user.get_username }}</p>
   </div>
 </nav>
 </body>
