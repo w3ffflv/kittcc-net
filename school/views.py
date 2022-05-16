@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
-from school.models import Lietotajs
 from django.db.models import Q
 
 
@@ -11,15 +10,8 @@ from django.db.models import Q
 
 
 def home(request):
-    
-    if 'q' in request.GET:
-        q = request.GET['q']
-        multiple_q = Q(Q(id__icontains=q) | Q(skola__icontains=q) | Q(skolenuskaits__icontains=q) | Q(novads__icontains=q) | Q(apestasporcijas__icontains=q) | Q(pirmdiena__icontains=q) | Q(otrdiena__icontains=q) | Q(tresdiena__icontains=q) | Q(ceturdiena__icontains=q) | Q(piekdiena__icontains=q) )
-        Lietotajs = Lietotajs.objects.filter(multiple_q)
-
-    else:
-        lietotajs = Lietotajs.objects.all()
-    return render(request,"home.html",{'lietotajs':lietotajs})
+    template = loader.get_template('home.html')
+    return HttpResponse(template.render({}, request))
 
 def login(request):
     template = loader.get_template('login.html')
