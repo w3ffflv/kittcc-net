@@ -15,6 +15,9 @@ class Lietotaji(models.Model):
     ceturdiena = models.CharField(max_length=254)
     piekdiena = models.CharField(max_length=254)
 
+    USERNAME_FIELD = 'username'
+
+        
     def __str__(self) -> str:
         return self.username
     class Meta:
