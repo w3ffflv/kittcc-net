@@ -2,7 +2,6 @@ from django.db import models
 
 class Lietotaji(models.Model):
     id = models.AutoField(primary_key=True)
-    email = models.EmailField(verbose_name='email address',unique=True)
     username = models.CharField(max_length=254,unique=True)
     password = models.CharField(max_length=254)
     repassword = models.CharField(max_length=254)
