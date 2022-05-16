@@ -3,15 +3,16 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Q
+from school.models import Student
 
 
 
 
 
 def home(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render({}, request))
+    students = Student.objects.all()
+    return render(request,"home.html",{'student':students})
+
 
 def login(request):
     template = loader.get_template('login.html')
@@ -24,6 +25,7 @@ def about(request):
 def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
+
 
 
 
