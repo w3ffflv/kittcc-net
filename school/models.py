@@ -3,6 +3,7 @@ from django.db import connections
 from django.contrib.auth.models import User
 
 class Lietotaji(models.Model):
+    user = models.OneToOneField(User)
     skola =  models.CharField(max_length=254)
     novads = models.CharField(max_length=254)
     skolenuskaits = models.CharField(max_length=254)
@@ -13,4 +14,10 @@ class Lietotaji(models.Model):
     ceturdiena = models.TextField()
     piekdiena = models.TextField()
 
+    def __unicode__(self):
+        return self.user
+
+    class Meta:
+        verbose_name = 'Profils'
+        verbose_name_plural = 'Profils'
         
