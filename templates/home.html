@@ -17,13 +17,65 @@
 <nav class="navtop">
   <div>
     <h1>KITTCC.NET</h1>
-    <a href="login"><i class="fas fa-user-circle"></i>Login</a>
-    <a href="logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    <a href="/accounts/profile/"><i class="fas fa-user-circle"></i>Profile</a>
+    <a href="/accounts/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
-  <h1>hello {{ user }}</h1>
-  <h1>skola {{ skola }}</h1>
 </nav>
     
+    <div class="content">
+          
+          <tr>
+            <td>Skola: Krāslavas Valsts ģimnāzija</td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td>Skolenu Skaits: 367</td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td>Novads: Krāslava</td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td>Apestās porcijas: 35.43%</td>
+            <td></td>
+            <td></td>
+          </tr>
+        <tr>
+            <td>Pirmdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Otrdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Trešdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Ceturdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr><tr>
+            <td>Piekdiena: Biesu zupa ar cukgalu, Rauga pankukas ar ievarijumu un krejumu, Kakao un Maize-1gb.</td>
+            <td></td>
+            <td></td>
+          </tr>
+      </div>
+      <button type="button" class="btn btn-primary">Izmainīt ēdienkarti</button></tbody></table>
+
+    
+    
+				{{stud.skola}}
+		    {{stud.novads}}
+				{{stud.skolenuskaits}}
+        {{stud.apestasporcijas}}
+
+ 
 
 
 

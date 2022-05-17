@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from xmlrpc.client import FastParser
 
 
 
@@ -48,8 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'school',
-    'social_django',
+    'school.apps.SchoolConfig',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +83,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'kittcc.wsgi.application'
+
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
