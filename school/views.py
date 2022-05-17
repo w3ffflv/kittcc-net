@@ -26,13 +26,10 @@ def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
 
-class ProfileView(DetailView):
-    model = Student()
-    context_object_name = 'user_object'
-    template_name = 'accounts/profile.html'
+
 
 
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
-    
+
 
