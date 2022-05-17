@@ -16,7 +16,7 @@
     <a href="/accounts/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 </nav>
-{% if access == 0 %}
+{% if access == "0" %}
   {% for el in students %}
     <div class="features">
       <div class="alert alert-warning">
