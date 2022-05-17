@@ -11,7 +11,7 @@ from django.views.generic.detail import DetailView
 
 def home(request):
     students = Student.objects.all()
-    return render(request,"home.html",{'student':students})
+    return render(request,"home.html",{'students':students})
 
 
 def login(request):
