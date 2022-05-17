@@ -1,3 +1,4 @@
+from curses.ascii import HT
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
@@ -28,6 +29,10 @@ def home(request):
 def login(request):
     template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
+ 
+
+
+   
 
 def about(request):
     template = loader.get_template('about.html')
