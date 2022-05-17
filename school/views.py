@@ -10,8 +10,8 @@ from django.views.generic.detail import DetailView
 
 
 def home(request):
-    Lietotaji = Student.objects.all()
-    return render(request,"home.html",{'Lietotaji':Lietotaji})
+    students = Student.objects.all()
+    return render(request,"home.html",{'students':students})
 
 
 def login(request):
