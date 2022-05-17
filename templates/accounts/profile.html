@@ -19,14 +19,18 @@
 				<a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
-		<div class="content">
-			<h2>Home Page</h2>
-			
-			
-			<p>Welcome back, {{ user }}!</p>
-			
-			
+		
+
+		{% for el in auth_user %}
+		<div class="features">
+  			<div class="alert alert-warning">
+    			<p>Skola: {{ el.skola }}</p>
+    			<p>Skolenu skaits: {{ el.skolenuskaits }}</p>
+    			<p>Novads: {{ el.novads}}</p>
+    			<p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
+  			</div>
 		</div>
+{% endfor %}
 	</body>
 </html>
 
