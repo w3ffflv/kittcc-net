@@ -28,16 +28,14 @@
   {% endfor %}
 
 {% elif user.access == 1 %}
-{% for i in novads %}
    {% for el in students %}
     <div class="features">
       <div class="alert alert-warning">
         <p>Skola: {{ el.skola }}</p>
-        <p>Novads: {{ i.novads}}</p>
+        <p>Novads: {{ el.novads}}</p>
         <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
       </div>
     </div>
-    {% endfor %}
   {% endfor %}
 {% else %}
     <p>NAV</p>
