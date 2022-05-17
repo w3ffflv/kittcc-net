@@ -14,7 +14,7 @@ urlpatterns = [
      path('contact/', views.contact, name="contact"),
      path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
      path('home/', views.home, name="home"),
-     path('accounts/profile',views.ProfileView.as_view(),name='profile'),
+     path('accounts/profile',views.ProfileView.as_view(),views.home,name='profile'),
 
     
 
