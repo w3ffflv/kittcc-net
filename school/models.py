@@ -18,8 +18,5 @@ class Student(models.Model):
     tresdiena = models.TextField(null=True)
     ceturdiena = models.TextField(null=True)
     piekdiena = models.TextField(null=True)
-
-
-    
     class Meta:
         db_table = "Lietotaji"
