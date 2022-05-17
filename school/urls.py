@@ -9,10 +9,10 @@ from django.conf.urls.static import static
 app_name = "school"
 
 urlpatterns = [
-     path(r'^$', auth_views.LoginView.as_view(template_name = "login.html"), name="login"),
-     path(r'^accounts/logout$', auth_views.LogoutView.as_view(), name="logout"),
-     path(r'^about/$', views.about, name="about"),
-     path(r'^contact/$', views.contact, name="contact"),
-     path(r"^accounts/profile/$", views.ProfileView.as_view(), name="profile"),
-     path(r'^home/$', views.home, name="home"),  
+     path('', auth_views.LoginView.as_view(template_name = "login.html"), name="login"),
+     path('accounts/logout', auth_views.LogoutView.as_view(), name="logout"),
+     path('about/', views.about, name="about"),
+     path('contact/', views.contact, name="contact"),
+     path("accounts/profile/", views.ProfileView.as_view(), name="profile"),
+     path('home/', views.home, name="home"),  
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
