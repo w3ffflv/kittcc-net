@@ -2,7 +2,7 @@ from django.db import models
 from django.db import connections
 from django.contrib.auth.models import User
 
-class Lietotaji(models.Model):
+class Skolas(models.Model):
     
     skola = models.ForeignKey(User, on_delete=models.CASCADE)
     novads = models.CharField(max_length=100)
