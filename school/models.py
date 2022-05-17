@@ -17,8 +17,7 @@ class User(AbstractUser):
     access = models.CharField(max_length=1)
     objects = UserManager()
     USERNAME_FIELD = 'username' 
+    REQUIRED_FIELDS = []
 
-    def __unicode__(self):
-        return self.user.username
 
         
