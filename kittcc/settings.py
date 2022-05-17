@@ -64,7 +64,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'kittcc.urls'
-AUTH_USER_MODEL= 'school.User'
+AUTH_USER_MODEL = 'school.User'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

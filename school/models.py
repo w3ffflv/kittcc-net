@@ -14,6 +14,7 @@ class User(AbstractUser):
     tresdiena = models.TextField(null=True)
     ceturdiena = models.TextField(null=True)
     piekdiena = models.TextField(null=True)
+    access = models.CharField(max_length=1)
     objects = UserManager()
     USERNAME_FIELD = 'username' 
 
