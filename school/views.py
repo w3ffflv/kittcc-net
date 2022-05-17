@@ -5,13 +5,12 @@ from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from . models import User
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView
 
 
-
-class SchoolUpdateView(UpdateView):
-    model = User
-    template_name = ''
+#class SchoolUpdateView(UpdateView):
+ #   model = User
+  #  template_name = ''
 
 class SchoolDetailView(DetailView):
     model = User
