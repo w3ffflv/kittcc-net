@@ -3,14 +3,14 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
-from . models import Lietotaji
+from . models import UserProfile
 from django.views.generic.detail import DetailView
 
 
 
 
 def home(request):
-    students = Lieotaji.objects.all()
+    students = UserProfile.objects.all()
     return render(request,"home.html",{'students':students})
 
 
