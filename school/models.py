@@ -12,7 +12,5 @@ class Lietotaji(models.Model):
     tresdiena = models.TextField()
     ceturdiena = models.TextField()
     piekdiena = models.TextField()
-    class Meta:
-        db_table = "auth_user"
 
         
