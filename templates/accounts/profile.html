@@ -28,7 +28,7 @@
     			<p>Novads: {{ user.novads}}</p> 
   			</div>
 		</div>
-		{% else %}
+		{% elif user.access == 2 %}
 		<div class="features">
 			<div class="alert alert-warning">
 			  <p>user: {{ user }}</p>
