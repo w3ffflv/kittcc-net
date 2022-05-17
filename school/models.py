@@ -3,8 +3,8 @@ from django.db import connections
 from django.contrib.auth.models import User
 
 class Lietotaji(models.Model):
-    user = models.ForeignKey(User,default=1, on_delete='CASCADE')
-    skola = models.CharField(max_length=100)
+    
+    skola = models.ForeignKey(User, on_delete=models.CASCADE)
     novads = models.CharField(max_length=100)
     skolenuskaits = models.CharField(max_length=100)
     apestasporcijas = models.CharField(max_length=100)
