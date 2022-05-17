@@ -14,6 +14,6 @@ class Lietotaji(models.Model):
     ceturdiena = models.TextField()
     piekdiena = models.TextField()
     class Meta:
-        db_table = "Lietotaji"
+        db_table = "Schools"
 
         
