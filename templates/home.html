@@ -26,20 +26,20 @@
         <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
       </div>
     </div>
-{% elif user.access == 2 %)
-      {% for el in students %}
-        <div class="features">
-          <div class="alert alert-warning">
-            <p>Skola: {{ el.skola }}</p>
-            <p>Skolenu skaits: {{ el.skolenuskaits }}</p>
-            <p>Novads: {{ el.novads}}</p>
-            <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
-          </div>
+  {% elif user.access == 2 %)
+    {% for el in students %}
+      <div class="features">
+        <div class="alert alert-warning">
+          <p>Skola: {{ el.skola }}</p>
+          <p>Skolenu skaits: {{ el.skolenuskaits }}</p>
+          <p>Novads: {{ el.novads}}</p>
+          <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
         </div>
-  {% endfor %}
-{% else %}
-    <p>NAV</p>
-{% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+  <p>NAV</p>
+  {% endif %}
 {% endblock %}
 
 
