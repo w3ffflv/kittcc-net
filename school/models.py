@@ -2,7 +2,7 @@ from django.db import models
 from django.db import connections
 from django.contrib.auth.models import User
 
-class Skolas(models.Model):
+class Lieotaji(models.Model):
     
     skola = models.ForeignKey(User, on_delete=models.CASCADE)
     novads = models.CharField(max_length=100)
@@ -14,6 +14,6 @@ class Skolas(models.Model):
     ceturdiena = models.TextField()
     piekdiena = models.TextField()
     class Meta:
-        db_table = "Skolas"
+        db_table = "Lietotaji"
 
         
