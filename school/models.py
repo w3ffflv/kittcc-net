@@ -1,6 +1,8 @@
 from django.db import models
+from django.db import connections
 
 class Student(models.Model):   
+    
     skola = models.CharField(max_length=100)
     novads = models.CharField(max_length=100)
     skolenuskaits = models.CharField(max_length=100)
