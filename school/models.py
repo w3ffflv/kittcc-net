@@ -12,7 +12,7 @@ class Student(models.Model):
     novads = models.CharField(max_length=100)
     skolenuskaits = models.CharField(max_length=100)
     apestasporcijas = models.CharField(max_length=100)
-    access = models.CharField(max_length=1)
+    atlauja = models.CharField(max_length=1)
     pirmdiena = models.TextField()
     otrdiena = models.TextField()
     tresdiena = models.TextField()
