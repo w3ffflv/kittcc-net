@@ -4,7 +4,7 @@
 
 {% block content %}
     {% if user.access == 1 or user.access == 2 %}
-        {% elif user.novads == el.novads %}
+        {% if user.novads == schooluser.novads %}
     <div class="features">
         <h1>{{ schooluser.skola }}</h1>
         <h1>{{ schooluser.skolenuskaits }}</h1>
