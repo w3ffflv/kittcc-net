@@ -64,7 +64,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'kittcc.urls'
-
+AUTH_USER_MODEL= 'school.User'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -83,7 +83,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'kittcc.wsgi.application'
-AUTH_USER_MODEL= 'school.User'
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
