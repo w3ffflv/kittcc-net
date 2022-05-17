@@ -15,7 +15,7 @@ from django.views.generic import DetailView
 class SchoolDetailView(DetailView):
     model = User
     template_name = '/details_view.html'
-    context_object_name = 'user'
+    context_object_name = 'schooluser'
 
 
 def home(request):
