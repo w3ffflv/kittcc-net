@@ -15,10 +15,5 @@ urlpatterns = [
      path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
      path('home/', views.home, name="home"),
      path('accounts/profile',views.ProfileView.as_view(),name='profile'),
-
-    
-
-     # Django Auth
-     path('accounts/login', auth_views.LoginView.as_view(template_name ="index.html"), name='login'),
   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
