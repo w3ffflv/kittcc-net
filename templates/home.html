@@ -16,9 +16,8 @@
     <a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 </nav>
-
+  {% if user.access == 1 and user.novads == students.novads  %}
   {% for el in students %}
-  {% if user.access == 1 and user.novads == el.novads  %}
     <div class="features">
       <div class="alert alert-warning">
         <p>Skola: {{ el.skola }}</p>
