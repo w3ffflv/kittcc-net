@@ -21,12 +21,15 @@
     <a href="/accounts/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 </nav>
-  {{ students }}
+  {% for el in students %}
+
 <div class="content">
-  <p>Skola {{ Skola }}</p>
-  <p>Skolenu skaits {{ skolenuskaits }}</p>
-  <p>Novads {{ novads}}</p>
-  <p>Apēstās porcijas {{ apestasporcijas }}</p>
+  <p>Skola {{ students.Skola }}</p>
+  <p>Skolenu skaits {{ students.skolenuskaits }}</p>
+  <p>Novads {{ students.novads}}</p>
+  <p>Apēstās porcijas {{ students.apestasporcijas }}</p>
+
+  {% endfor %}
 
   
 </div>
