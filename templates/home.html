@@ -24,25 +24,14 @@
 {% for el in students %}
 <div class="features">
   <div class="alert alert-warning">
-    <p>Skola {{ el.Skola }}</p>
+    <p>Skola {{ el.skola }}</p>
     <p>Skolenu skaits {{ el.skolenuskaits }}</p>
     <p>Novads {{ el.novads}}</p>
     <p>Apēstās porcijas {{ el.apestasporcijas }}</p>
   </div>
 </div>
 {% endfor %}
-      <button type="button" class="btn btn-primary">Izmainīt ēdienkarti</button></tbody></table>
-
-    
-    
-				{{stud.skola}}
-		    {{stud.novads}}
-				{{stud.skolenuskaits}}
-        {{stud.apestasporcijas}}
-
- 
-
-
+  
 
 {% endblock %}
 
