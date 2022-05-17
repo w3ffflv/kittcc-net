@@ -14,7 +14,7 @@ urlpatterns = [
      path('contact/', views.contact, name="contact"),
      path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
      path('home/', views.home, name="home"),
-     urls(r'^profile/(?P<pk>\d+)$',views.ProfileView.as_view(),name='profile'),
+     path('accounts/profile',views.ProfileView.as_view(),name='profile'),
 
     
 
