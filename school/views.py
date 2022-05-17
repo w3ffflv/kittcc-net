@@ -5,7 +5,18 @@ from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from . models import User
+from django.views.generic import DetailView, UpdateView
 
+
+
+class SchoolUpdateView(UpdateView):
+    model = User
+    template_name = ''
+
+class SchoolDetailView(DetailView):
+    model = User
+    template_name = 'details_view.html'
+    context_object_name = 'user'
 
 
 def home(request):

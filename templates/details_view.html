@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Details View {% endblock %}
+
+{% block content %}
+
+    <div class="features">
+        <h1>{{ user.skola }}</h1>
+        <h1>{{ user.skolenuskaits }}</h1>
+        <h1>{{ user.apestasporcijas }}</h1>
+    </div>
+{% endblock %}
