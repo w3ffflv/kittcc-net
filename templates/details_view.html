@@ -11,6 +11,8 @@
         <h1>{{ schooluser.apestasporcijas }}</h1>
     </div>
         
+    {% elif school.user.novads == None %}
+    <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile/">
     {% else %}
     <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile/">
         {% endif %}
