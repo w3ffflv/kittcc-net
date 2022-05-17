@@ -3,7 +3,6 @@ from django.db import connections
 from django.contrib.auth.models import User
 
 class Lietotaji(models.Model):
-    access= models.ForeignKey(User, on_delete=models.CASCADE)
     skola =  models.CharField(max_length=254)
     novads = models.CharField(max_length=254)
     skolenuskaits = models.CharField(max_length=254)
@@ -14,6 +13,6 @@ class Lietotaji(models.Model):
     ceturdiena = models.TextField()
     piekdiena = models.TextField()
     class Meta:
-        db_table = "Lietotaji"
+        db_table = "auth_user"
 
         
