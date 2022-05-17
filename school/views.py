@@ -20,7 +20,9 @@ class SchoolDetailView(DetailView):
 
 def home(request):
     students = User.objects.all()
-    return render(request,"home.html", {'students': students})
+    novads = User.objects.filter(user=request.user).values()
+    context = {'students':students,'novads':novads}
+    return render(request,"home.html", context)
 
 
 def login(request):
