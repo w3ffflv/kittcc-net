@@ -145,7 +145,7 @@ STATIC_ROOT = '/home/www/kittcc.net/static/'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
+LOGIN_URL = '/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SCHOOL_AUTH_URL_NAMESPACE = 'school'
 
