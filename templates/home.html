@@ -28,8 +28,8 @@
   {% endfor %}
 
 {% elif user.access == 1 %}
+{% for i in novads %}
    {% for el in students %}
-    {% for i in novads %}
     <div class="features">
       <div class="alert alert-warning">
         <p>Skola: {{ el.skola }}</p>
