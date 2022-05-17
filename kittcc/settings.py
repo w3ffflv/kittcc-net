@@ -94,7 +94,7 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'othbpjti_skola',
+        'NAME': 'othbpjti_kittcc',
         'USER': 'othbpjti_skola2022',
         'PASSWORD' : 's[Qe6mG]v6TR',
         'HOST' : '192.236.178.44',
