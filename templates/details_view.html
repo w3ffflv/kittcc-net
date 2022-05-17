@@ -3,11 +3,12 @@
 {% block title %} {{ schooluser.skola }} {% endblock %}
 
 {% block content %}
-
+    {% if user.access == 1 or user.access == 2 %}
     <div class="features">
         <h1>{{ schooluser.skola }}</h1>
         <h1>{{ schooluser.skolenuskaits }}</h1>
         <h1>{{ schooluser.apestasporcijas }}</h1>
-        
     </div>
+    {% else %}
+    {% url 'logout' %}?next=/" %}
 {% endblock %}
