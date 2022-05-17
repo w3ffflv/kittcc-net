@@ -15,7 +15,7 @@ class UserProfile(models.Model):
     piekdiena = models.TextField()
 
     def __unicode__(self):
-        return self.user
+        return self.user.username
 
     class Meta:
         verbose_name = 'Profils'
