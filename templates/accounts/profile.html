@@ -20,7 +20,7 @@
 				<a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
-		{% elif user.access == 2 %}
+		{% elif user.access == 0 %}
 		<nav class="navtop">
 			<div>
 				<h1>Website Title</h1>
