@@ -30,6 +30,7 @@
 {% elif user.access == 1 %}
   {% for el in students %}
     {% if user.novads == el.novads %}
+
     <div class="features">
       <div class="alert alert-warning">
         <p>Skola: {{ el.skola }}</p>
