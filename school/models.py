@@ -1,18 +1,25 @@
 from django.db import models
-from django.db import connections
-from django.utils.deconstruct import deconstructible
 from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser 
+from PIL import Image
 
-@deconstructible
-class Lietotaji(AbstractUser):   
-    username = None
-    email = models.EmailField(User('email address'), unique=True)
-    password = models.CharField(max_length=254)
-    skola = models.CharField(max_length=100)
-    novads = models.CharField(max_length=100)
-    skolenuskaits = models.CharField(max_length=100)
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
-    class Meta:
-        db_table = "lietotaji"
+
+# Extending User Model Using a One-To-One Link
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
+    bio = models.TextField()
+
+    def __str__(self):
+        return self.user.username
+
+    # resizing images
+    def save(self, *args, **kwargs):
+        super().save()
+
+        img = Image.open(self.avatar.path)
+
+        if img.height > 100 or img.width > 100:
+            new_img = (100, 100)
+            img.thumbnail(new_img)
+            img.save(self.avatar.path)
