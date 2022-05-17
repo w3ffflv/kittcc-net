@@ -12,12 +12,12 @@ class Student(models.Model):
     novads = models.CharField(max_length=100)
     skolenuskaits = models.CharField(max_length=100)
     apestasporcijas = models.CharField(max_length=100)
-    atlauja = models.CharField(max_length=1)
-    pirmdiena = models.TextField()
-    otrdiena = models.TextField()
-    tresdiena = models.TextField()
-    ceturdiena = models.TextField()
-    piekdiena = models.TextField()
+    atlauja = models.CharField(on_delete=models.CASCADE, null=True,max_length=1)
+    pirmdiena = models.TextField(null=True)
+    otrdiena = models.TextField(null=True)
+    tresdiena = models.TextField(null=True)
+    ceturdiena = models.TextField(null=True)
+    piekdiena = models.TextField(null=True)
 
 
     
