@@ -17,7 +17,4 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return self.user.username
 
-    class Meta:
-        verbose_name = 'Profils'
-        verbose_name_plural = 'Profils'
         
