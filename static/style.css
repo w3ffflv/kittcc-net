@@ -129,3 +129,16 @@ body.loggedin
   color: #4a536e;
   padding-right: 15px;
 }
+
+.content > div p {
+  padding: 5px;
+  margin: 0 0 10px 0;
+} 
+
+.alert-warning {
+  float: left; 
+  clear: both;
+  width: 400px;
+  margin: 20px 34%;
+  text-align: left;
+} 
