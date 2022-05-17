@@ -1,3 +1,4 @@
+from django import urls
 from django.contrib import admin
 from django.urls import path,include
 from . import views
@@ -9,10 +10,12 @@ from django.conf.urls.static import static
 urlpatterns = [
      path('', auth_views.LoginView.as_view(template_name = "login.html"), name="login"),
      path('accounts/logout', auth_views.LogoutView.as_view(), name="logout"),
+     path('accounts/profile', views.ProfileView, name="logout"),
      path('about/', views.about, name="about"),
      path('contact/', views.contact, name="contact"),
      path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
      path('home/', views.home, name="home"),
+     urls(r'^profile/(?P<pk>\d+)$',views.ProfileView.as_view(),name='profile'),
 
     
 

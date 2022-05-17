@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from school.models import Student
-
+from django.views.generic.detail import DetailView
 
 
 
@@ -26,7 +26,10 @@ def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
 
-
+class ProfileView(DetailView):
+    model = Student()
+    context_object_name = 'user_object'
+    template_name = 'accounts/profile.html'
 
 
 class ProfileView(LoginRequiredMixin,TemplateView):
