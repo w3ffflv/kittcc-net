@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
 	<body class="loggedin">
+		{% if user.access == 0 or if user.access == 1%}
 		<nav class="navtop">
 			<div>
 				<h1>Website Title</h1>
@@ -19,7 +20,16 @@
 				<a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
-		
+		{% elif user.access == 2 %}
+		<nav class="navtop">
+			<div>
+				<h1>Website Title</h1>
+				<a href="{% url 'admin' %}"><i class="fas fa-user-circle"></i>Admin</a>
+				<a href="{% url 'home' %}"><i class="fas fa-user-circle"></i>Home</a>
+				<a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		{% endif %}
 
 		{% if user.access == 1 %}
 		<div class="features">
