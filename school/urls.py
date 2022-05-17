@@ -12,6 +12,6 @@ urlpatterns = [
      path(r'^accounts/logout$', auth_views.LogoutView.as_view(), name="logout"),
      path(r'^about/$', views.about, name="about"),
      path(r'^contact/$', views.contact, name="contact"),
-     path(r'^accounts/profile/$', views.ProfileView.as_view(), name="profile"),
+     path(r"^accounts/profile/$", views.ProfileView.as_view(), name="profile"),
      path(r'^home/$', views.home, name="home"),  
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
