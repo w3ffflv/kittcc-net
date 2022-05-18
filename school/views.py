@@ -20,7 +20,7 @@ class SchoolDetailView(DetailView):
 
 @login_required
 def home(request):
-    students = User.objects.all()
+    students = User.objects.all() 
     return render(request,"home.html", {'students':students})
 
 
