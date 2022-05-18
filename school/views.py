@@ -12,12 +12,14 @@ from .forms import UserForm
 
 class SchoolUpdateView(UpdateView):
     model = User
+    students = User.objects.all() 
     template_name = 'update_school_info.html'
     
     form_class = UserForm
 
 class SchoolDetailView(DetailView):
     model = User
+    students = User.objects.all() 
     template_name = 'details_view.html'
     context_object_name = 'schooluser'
 
