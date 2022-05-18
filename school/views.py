@@ -18,7 +18,6 @@ class SchoolUpdateView(UpdateView):
 
 class SchoolDetailView(DetailView):
     model = User
-    students = User.objects.all() 
     template_name = 'details_view.html'
     context_object_name = 'schooluser'
 
