@@ -22,11 +22,9 @@ class SchoolSeacrhListView(ListView):
     def get_context_data(self, **kwargs):
         context =  super().get_context_data(**kwargs)
         context["qs_json"] = json.dumps(list(User.objects.values()))
+        if isinstance(self, datetime.datetime):
+            return o.__str__()
         return context
-    def json_serial(context):
-        if isinstance(context, (datetime, date)):
-            return context.isoformat()
-        raise TypeError ("Type %s not serializable" % type(obj))    
 class SchoolUpdateView(UpdateView):
     model = User
     template_name = 'update_school_info.html'
