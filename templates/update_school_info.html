@@ -1,0 +1,47 @@
+% extends 'base.html' %}
+{% load static %}
+{% block title %} UPDATE {% endblock %}
+
+{% block content %}
+
+<head>
+  <meta charset="utf-8">
+  <title>Home</title> 
+  </head>
+
+<nav class="navtop">
+  <div>
+    <h1>KITTCC.NET</h1>
+    <a href="/accounts/profile/"><i class="fas fa-user-circle"></i>Profile</a>
+    <a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
+  </div>
+</nav>
+
+<form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Pirmdiena</label>
+      <input type="text" class="form-control" id="pirmdiena" placeholder="Pirmdiena">
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Otrdiena</label>
+      <input type="text" class="form-control" id="otrdiena" placeholder="Otrdiena">
+    </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Trešdiena</label>
+        <input type="text" class="form-control" id="tresdiena" placeholder="Trešdiena">
+      </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Ceturdiena</label>
+        <input type="text" class="form-control" id="ceturdiena" placeholder="Ceturdienat">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Piekdiena</label>
+        <input type="text" class="form-control" id="piekdiena" placeholder="Piekdiena">
+      </div>
+  </form>
+
+{% endblock %}
