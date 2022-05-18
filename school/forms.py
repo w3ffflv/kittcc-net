@@ -27,6 +27,6 @@ class UserForm(ModelForm):
              "piekdiena":TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Piekdiena'
-            }),
+            })
             
         }
