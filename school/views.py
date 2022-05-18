@@ -18,7 +18,7 @@ class SchoolDetailView(DetailView):
     template_name = 'details_view.html'
     context_object_name = 'schooluser'
 
-@login_required
+
 def home(request):
     students = User.objects.all()
     novads = User.objects.filter(user=request.user).values()
@@ -33,11 +33,11 @@ def login(request):
 
 
    
-@login_required
+
 def about(request):
     template = loader.get_template('about.html')
     return HttpResponse(template.render({}, request))
-@login_required
+
 def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
