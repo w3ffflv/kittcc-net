@@ -312,10 +312,10 @@
 
                     </div>
 					
-                    {% endif %}
+                    {% else %}
 
                     <!--  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA-->
-                    {% if user.access == 1 %}
+                    {% elif user.access == 1 %}
                         {% for el in students %}
                             {% if user.novads == el.novads %}
                                 {% if el.access == 0 %}
