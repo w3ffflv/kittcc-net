@@ -65,9 +65,6 @@ def contact(request):
 
 
 class ProfileView(LoginRequiredMixin,TemplateView):
-    def home(request):
-        students = User.objects.all() 
-        return render(request,"accounts/profile.html", {'students':students})
     template_name = 'accounts/profile.html'
 
 
