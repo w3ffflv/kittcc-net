@@ -42,7 +42,7 @@ def contact(request):
 
 
 
-
+@login_required
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
 
