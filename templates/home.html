@@ -31,6 +31,7 @@
           <p>Trešdiena: {{ el.tresdiena }}</p>
           <p>Ceturdiena: {{ el.ceturdiena }}</p>
           <p>Piekdiena: {{ el.piekdiena }}</p>
+          <a href="{% url 'school-update' el.id %}" class="btn btn-success">Izmainīt ēdienkarti</a>
           <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
         </div>
       </div>
