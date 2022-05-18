@@ -435,23 +435,7 @@
     
 </html>
 
-{% block scripts %}
-<script>
-    const data = '{{qs_json}}'
-    console.log(data)
 
-    const rdata = JSON.parse(data.replace(/&quot;/g, ''))
-    console.log(rdata)
-    
-    const input = document.getElementById('search_here')
-    console.log(input)
-
-    let filteredArr = []
-    input.addEventListener('keyup', ()=>{
-        box.innerHTML = ""
-    })
-</script>
-{% endblock scripts %}
 
 
 {% endblock %}

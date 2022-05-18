@@ -10,20 +10,9 @@ from . models import User
 from django.views.generic import DetailView, UpdateView
 from django.contrib.auth.decorators import login_required
 from .forms import UserForm
-from django.views.generic import ListView
-import json
-from datetime import date, datetime
 
 
-class SchoolSeacrhListView(ListView):
-    model = User
-    template_name = 'accounts/profile.html'
 
-    def get_context_data(self, **kwargs):
-        context =  super().get_context_data(**kwargs)
-        context["qs_json"] = json.dumps(list(User.objects.values()))
-        if isinstance(context, datetime.datetime):
-            return context
 class SchoolUpdateView(UpdateView):
     model = User
     template_name = 'update_school_info.html'
