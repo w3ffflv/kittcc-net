@@ -14,7 +14,7 @@
                     <h1>{{ schooluser.skola }}</h1>
                     <h1>{{ schooluser.skolenuskaits }}</h1>
                     <h1>
-                        {% widthratio (schooluser.apestasporcijas / schooluser.skolenuskaits) * 100 %}
+                        {% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}
                     </h1>
                     
                 </div>
