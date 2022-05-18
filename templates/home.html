@@ -65,7 +65,8 @@
     {% else %}
     {% for el in students %}
     {% if user.skola == el.skola %}
-
+    <div class="features">
+      <div class="alert alert-warning">
     <p>Skola: {{ el.skola }}</p>
         <p>Novads: {{ el.novads}}</p>
         <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
@@ -76,6 +77,8 @@
         <p>Piekdiena: {{ el.piekdiena }}</p>
         <a href="{% url 'school-update' el.id %}" class="btn btn-success">Izmainīt ēdienkarti</a>
         <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+      </div>
+    </div>
       {% endif %} 
       {% endfor %}
      
