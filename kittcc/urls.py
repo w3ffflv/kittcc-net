@@ -18,10 +18,12 @@ from django.conf.urls import include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path,include
+from school.views import SchoolSeacrhListView
 
 urlpatterns = [
     path('admin/', admin.site.urls, name=admin),     
     path('', include('school.urls')),
+    path('account/profile', SchoolSeacrhListView.as_view(), name='school-name')
     
     
 ]
