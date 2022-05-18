@@ -20,4 +20,5 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
 
-        
+    def get_absoulute_url(self):
+        return f'/accounts/profile'
