@@ -60,15 +60,16 @@
                     <i class="fas fa-fw fa-graduation-cap"></i>
                     <span>Skolas</span>
                 </a>
+			</li>
 			{% else %}	
 			{% endif %}
-			{% if user.access == 0 %}
 			<li class="nav-item">
                 <a class="nav-link collapsed" href="{% url 'school-update' user.id %}">
                     <i class="fas fa-fw fa-graduation-cap"></i>
                     <span>Ēdienkarte</span>
                 </a>
 			{% else %}
+			
 			{% endif %}
                 
 
