@@ -18,7 +18,7 @@ class SchoolUpdateView(UpdateView):
 
 class SchoolDetailView(DetailView):
     model = User
-    template_name = 'details_view.html'
+    template_name = 'accounts/profile.html'
     context_object_name = 'schooluser'
 
 @login_required
