@@ -16,9 +16,7 @@
     <a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 </nav>
-  {% if user.access == 2 %}
-    {% for el in students %}
-      {% if el.access == 0 %}
+  
 
     <table class="table table-bordered">
       <thead>
@@ -30,16 +28,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        {% if user.access == 2 %}
+          {% for el in students %}
+            {% if el.access == 0 %}
           <th scope="row">{{ el.id }}</th>
           <td>{{ el.skola }}</td>
           <td>{{ el.skolenuskaits }}</td>
-        </tr>
       </tbody>
     </table>
 
-
-    
     {% endif %}
   {% endfor %}
 
