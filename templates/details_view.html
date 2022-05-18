@@ -5,18 +5,20 @@
 {% block content %}
     {% if user.access == 1 and user.novads == schooluser.novads %}
     <div class="features">
-        <h1>{{ schooluser.skola }}</h1>
-        <h1>{{ schooluser.skolenuskaits }}</h1>
-        <h1>{{ schooluser.apestasporcijas }}</h1>
+        <h1>Skola: {{ schooluser.skola }}</h1>
+        <h1>Skolēnu skaits: {{ schooluser.skolenuskaits }}</h1>
+        <h1>Apēstās porcijas: {{ schooluser.apestasporcijas }} </h1>
+        <h1>Apestās porcijas:
+            {% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %} %
+        </h1>
     </div>
             {% elif user.access == 2 %}
-                <div class="features">
-                    <h1>{{ schooluser.skola }}</h1>
-                    <h1>{{ schooluser.skolenuskaits }}</h1>
-                    <h1>{{ schooluser.apestasporcijas }}</h1>
-                    <h1>
-                        {% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}
-                    </h1>
+            <h1>Skola: {{ schooluser.skola }}</h1>
+            <h1>Skolēnu skaits: {{ schooluser.skolenuskaits }}</h1>
+            <h1>Apēstās porcijas: {{ schooluser.apestasporcijas }} </h1>
+            <h1>Apestās porcijas:
+                {% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %} %
+            </h1>
                     
                 </div>
 
