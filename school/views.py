@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 #class SchoolUpdateView(UpdateView):
  #   model = User
   #  template_name = 'details_view.html'
-
+@login_required
 class SchoolDetailView(DetailView):
     model = User
     template_name = 'details_view.html'
@@ -41,7 +41,7 @@ def contact(request):
     return HttpResponse(template.render({}, request))
 
 
-
+@login_required
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
 
