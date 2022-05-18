@@ -1,5 +1,6 @@
 from curses.ascii import HT
-from django.http import HttpResponse
+from django import http
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
@@ -9,9 +10,12 @@ from . models import User
 from django.views.generic import DetailView, UpdateView
 from django.contrib.auth.decorators import login_required
 
-#class SchoolUpdateView(UpdateView):
- #   model = User
-  #  template_name = 'details_view.html'
+class SchoolUpdateView(UpdateView):
+    model = User
+    template_name = 'update_school_info.html'
+    
+    fields = ['pirmdiena', 'otrdiena','tresdiena','ceturdiena','piekdiena']
+
 class SchoolDetailView(DetailView):
     model = User
     template_name = 'details_view.html'
@@ -27,6 +31,7 @@ def login(request):
     template = loader.get_template('login.html')
     return HttpResponse(template.render({}, request))
  
+
 
 
    
