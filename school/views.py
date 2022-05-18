@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -32,10 +32,21 @@ def login(request):
  
 
 def create(request):
+    error=''
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+        else:
+            error='Forma bija uzrakstīta kļūdaini'
+            
+
     form = UserForm()
 
     data = {
-        'form':form
+        'form':form,
+        'error':error
     }
     template = loader.get_template('update_school_info.html')
     return HttpResponse(template.render({}, request),data)
