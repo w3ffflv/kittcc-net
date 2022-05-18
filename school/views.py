@@ -18,12 +18,10 @@ class SchoolDetailView(DetailView):
     template_name = 'details_view.html'
     context_object_name = 'schooluser'
 
-
+@login_required
 def home(request):
     students = User.objects.all()
-    novads = User.objects.filter(user=request.user).values()
-    context = {'students':students,'novads':novads}
-    return render(request,"home.html", context)
+    return render(request,"home.html", {'students':students})
 
 
 def login(request):
