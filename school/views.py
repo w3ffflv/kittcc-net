@@ -38,7 +38,7 @@ def create(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('accounts/profile/')
         else:
             error='Forma bija uzrakstīta kļūdaini'
             
