@@ -16,7 +16,6 @@
     <a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 </nav>
-{% if user.id == form.id %}
 <div class="features">
     <form method="POST">
         {% csrf_token %}
