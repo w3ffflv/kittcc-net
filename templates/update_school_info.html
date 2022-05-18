@@ -16,6 +16,7 @@
     <a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 </nav>
+{% if user.id == form.id %}
 <div class="features">
     <form method="POST">
         {% csrf_token %}
@@ -28,5 +29,8 @@
         <button class="btn btn-success" type="submit">Atjaunināt Ēdienkarti</button>
     </form>
 </div>
+{% else %}
+<meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile">
+{% endif %}
 
 {% endblock %}
