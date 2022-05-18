@@ -23,8 +23,15 @@
 
             </h1>
         </div>
-
-        
+        {% elif user.id = request.user.id %}
+        <div class="features">
+            <h1>Skola: {{ schooluser.skola }}</h1>
+            <h1>Skolēnu skaits: {{ schooluser.skolenuskaits }}</h1>
+            <h1>Apēstās porcijas: {{ schooluser.apestasporcijas }} </h1>
+            <h1>Apestās porcijas:
+                {% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %} %
+            </h1>
+        </div>
         {% else %}
         <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile/">
     {% endif %}
