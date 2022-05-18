@@ -140,55 +140,7 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                
-                {% if user.access == 2 %}
-                {% for el in students %}
-                  {% if el.access == 0 %}
             
-                
-                  <div class="features">
-                    <div class="alert alert-warning">
-                      <p>Skola: {{ el.skola }}</p>
-                      <p>Novads: {{ el.novads}}</p>
-                      <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
-                      <p>Pirmdiena: {{ el.pirmdiena }}</p>
-                      <p>Otrdiena: {{ el.otrdiena }}</p>
-                      <p>Trešdiena: {{ el.tresdiena }}</p>
-                      <p>Ceturdiena: {{ el.ceturdiena }}</p>
-                      <p>Piekdiena: {{ el.piekdiena }}</p>
-                      <a href="{% url 'school-update' el.id %}" class="btn btn-success">Izmainīt ēdienkarti</a>
-                      <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
-                    </div>
-                  </div>
-            
-            
-               
-                {% endif %}
-              {% endfor %}
-
-              {% elif user.access == 1 %}
-  {% for el in students %}
-    {% if user.novads == el.novads %}
-      {% if el.access == 0 %}
-    <div class="features">
-      <div class="alert alert-warning">
-        <p>Skola: {{ el.skola }}</p>
-        <p>Novads: {{ el.novads}}</p>
-        <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
-        <p>Pirmdiena: {{ el.pirmdiena }}</p>
-        <p>Otrdiena: {{ el.otrdiena }}</p>
-        <p>Trešdiena: {{ el.tresdiena }}</p>
-        <p>Ceturdiena: {{ el.ceturdiena }}</p>
-        <p>Piekdiena: {{ el.piekdiena }}</p>
-        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
-      </div>
-    </div>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-{% else %}
-<meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile">
-{% endif %}
 
 
 
