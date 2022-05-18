@@ -33,11 +33,11 @@ def login(request):
 
 
    
-
+@login_required
 def about(request):
     template = loader.get_template('about.html')
     return HttpResponse(template.render({}, request))
-
+@login_required
 def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
