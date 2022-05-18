@@ -154,6 +154,7 @@
 
                     <!-- Content Row -->
 					{% if user.access == 0 %}
+
                     <div class="row">
                         
                         <!-- Earnings (Monthly) Card Example -->
@@ -312,10 +313,9 @@
                     </div>
 					
                     {% endif %}
-                    {% endfor %}
 
                     <!--  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA-->
-                    {% elif user.access == 1 %}
+                    {% if user.access == 1 %}
                         {% for el in students %}
                             {% if user.novads == el.novads %}
                                 {% if el.access == 0 %}
@@ -511,7 +511,7 @@
             {% endfor %}
         {% else %}
 
-        {% endif %}
+        
 
                     <!--  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA-->
 
@@ -704,7 +704,7 @@
                     </div>
                 </div>
 
-
+                {% endif %}
 
 					
 <!--  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA  VALDIBA-->
