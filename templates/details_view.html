@@ -13,7 +13,7 @@
                 <div class="features">
                     <h1>{{ schooluser.skola }}</h1>
                     <h1>{{ schooluser.skolenuskaits }}</h1>
-                    <h1>{{ schooluser.apestasporcijas / schooluser.skolenuskaits * 100 }}</h1>
+                    <h1>{{ schooluser.apestasporcijas / (schooluser.skolenuskaits * 100) }}</h1>
                 </div>
 
             {% else %}
