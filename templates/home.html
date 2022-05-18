@@ -20,13 +20,13 @@
     {% for el in students %}
       {% if el.access == 0 %}
 
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Skola</th>
           <th scope="col">Skolenu skaits</th>
-          <th scope="col"><a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a></th>
+          <th scope="col">Profils<a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a></th>
         </tr>
       </thead>
       <tbody>
