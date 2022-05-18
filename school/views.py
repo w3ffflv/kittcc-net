@@ -22,9 +22,8 @@ class SchoolSeacrhListView(ListView):
     def get_context_data(self, **kwargs):
         context =  super().get_context_data(**kwargs)
         context["qs_json"] = json.dumps(list(User.objects.values()))
-        if isinstance(self, datetime.datetime):
-            return self.__str__()
-        return context
+        if isinstance(context, datetime.datetime):
+            return context
 class SchoolUpdateView(UpdateView):
     model = User
     template_name = 'update_school_info.html'
