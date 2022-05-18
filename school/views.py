@@ -12,7 +12,7 @@ from .forms import UserForm
 
 class SchoolUpdateView(UpdateView):
     model = User
-    template_name = 'accounts/profile.html'
+    template_name = 'update_school_info.html'
     
     form_class = UserForm
 
