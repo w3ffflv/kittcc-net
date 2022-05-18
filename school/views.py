@@ -23,7 +23,7 @@ class SchoolSeacrhListView(ListView):
         context =  super().get_context_data(**kwargs)
         context["qs_json"] = json.dumps(list(User.objects.values()))
         if isinstance(self, datetime.datetime):
-            return o.__str__()
+            return self.__str__()
         return context
 class SchoolUpdateView(UpdateView):
     model = User
