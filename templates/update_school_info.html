@@ -19,6 +19,7 @@
 <div>
     <form method="POST">
         {% csrf_token %}
+        {{ form }}
         <input type="text" placeholder="Pirmdiena" class="form-control"><br>
         <input type="text" placeholder="Otrdiena" class="form-control"><br>
         <input type="text" placeholder="Tresdiena" class="form-control"><br>
