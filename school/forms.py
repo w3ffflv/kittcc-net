@@ -4,7 +4,7 @@ from django.forms import ModelForm,TextInput
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ['novads' , 'pirmdiena', 'otrdiena', 'tresdiena', 'ceturdiena', 'piekdiena']
+        fields = ['pirmdiena', 'otrdiena', 'tresdiena', 'ceturdiena', 'piekdiena']
 
         widgets = {
             "pirmdiena":TextInput(attrs={
