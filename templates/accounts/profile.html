@@ -302,7 +302,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 PIEKTDIENA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.piekdiena }}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.piekdiena }}</div>
                                         </div>
                                         <div class="col-auto">
                                         </div>
@@ -323,7 +323,7 @@
 									<div class="col mr-2">
 										<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
 											NOVADS</div>
-										<div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.novads }}</div>
+										<div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.novads }}</div>
 									</div>
 									<div class="col-auto">
 
@@ -340,7 +340,7 @@
                     {% elif user.access == 1 %}
                         {% for el in students %}
                             {% if user.novads == el.novads %}
-                                {% if el.access == 0 %}
+                                {% if el.access == 1 %}
 					<div class="col-xl-3 col-md-6 mb-4">
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
@@ -361,8 +361,7 @@
             {% endfor %}
         {% else %}
 
-    <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile">
-    {% endif %}
+        {% endif %}
 
                     <!--  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA  PASVALDIBA-->
 
@@ -392,7 +391,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Skola</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.skola }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.skola }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -409,7 +408,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             NOVADS</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.novads }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.novads }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -435,7 +434,7 @@
                                                 <div class="progress progress-sm mr-2">
                                                     <div class="progress-bar bg-primary" role="progressbar" style="width: {% widthratio user.apestasporcijas user.skolenuskaits 100 %}%" aria-valuenow="100"
                                                         aria-valuemin="0"
-                                                        aria-valuemax="100">{% widthratio el.apestasporcijas el.skolenuskaits 100 %}%</div>
+                                                        aria-valuemax="100">{% widthratio user.apestasporcijas user.skolenuskaits 100 %}%</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -456,7 +455,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Appēsto porciju skaits</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.apestasporcijas }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.apestasporcijas }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -472,7 +471,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             PIRMDIENA</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.pirmdiena }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.pirmdiena }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -486,7 +485,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             OTRDIENA</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.otrdiena }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.otrdiena }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -500,7 +499,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             TREŠDIENA</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.tresdiena }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.tresdiena }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -514,7 +513,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             CETURDIENA</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.ceturdiena }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.ceturdiena }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -528,7 +527,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             PIEKTDIENA</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.piekdiena }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.piekdiena }}</div>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -545,7 +544,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                         NOVADS</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ el.novads }}</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.novads }}</div>
                                 </div>
                                 <div class="col-auto">
 
