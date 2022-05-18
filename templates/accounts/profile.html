@@ -3,58 +3,6 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Home</title>
-		<link href="{% static 'profile.css' %}" rel="stylesheet"/>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	</head>
-	<body class="loggedin">
-		{% if user.access == 1 or user.access == 2 %}
-		<nav class="navtop">
-			<div>
-				<h1>Website Title</h1>
-				<a href="{% url 'home' %}"><i class="fas fa-user-circle"></i>Home</a>
-				<a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
-			</div>
-		</nav>
-		{% elif user.access == 0 %}
-		<nav class="navtop">
-			<div>
-				<h1>Website Title</h1>
-				<a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
-			</div>
-		</nav>
-		{% endif %}
-
-		{% if user.access == 1 %}
-		<div class="features">
-  			<div class="alert alert-warning"> 
-				<p>user: {{ user }}</p>
-    			<p>Novads: {{ user.novads}}</p> 
-  			</div>
-		</div>
-		{% elif user.access == 2 %}
-		<div class="features">
-			<div class="alert alert-warning">
-			  <p>user: {{ user }}</p>
-			  <p>password: {{ password }}</p>
-			</div>
-	  	</div>
-	  {% else %}
-	<div class="features">
-		<div class="alert alert-warning">
-		  <p>user: {{ user }}</p>
-		  <p>Skola: {{ user.skola }}</p>
-		  <p>Skolenu skaits: {{ user.skolenuskaits }}</p>
-		  <p>Novads: {{ user.novads}}</p> 
-		  <p>Apēstās porcijas: {{ user.apestasporcijas }}</p>
-		</div>
-  	</div>
-	  {% endif %}
-
 
 <!DOCTYPE html>
 <html lang="en">
