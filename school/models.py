@@ -21,4 +21,4 @@ class User(AbstractUser):
 
 
     def get_absoulute_url(self):
-        return f'/accounts/profile'
+        return f'/user/{self.id}'
