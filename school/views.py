@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserForm
 from django.views.generic import ListView
 import json
+from datetime import date, datetime
+
 
 class SchoolSeacrhListView(ListView):
     model = User
@@ -21,6 +23,10 @@ class SchoolSeacrhListView(ListView):
         context =  super().get_context_data(**kwargs)
         context["qs_json"] = json.dumps(list(User.objects.values()))
         return context
+    def json_serial(context):
+        if isinstance(context, (datetime, date)):
+            return context.isoformat()
+        raise TypeError ("Type %s not serializable" % type(obj))    
 class SchoolUpdateView(UpdateView):
     model = User
     template_name = 'update_school_info.html'
