@@ -19,13 +19,29 @@
   {% if user.access == 2 %}
     {% for el in students %}
       {% if el.access == 0 %}
-    <div class="features">
-      <div class="alert alert-warning">
-        <p>Skola: {{ el.skola }}</p>
-        <p>Skolenu skaits: {{ el.skolenuskaits }}</p>
-        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
-      </div>
-    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Skola</th>
+          <th scope="col">Skolenu skaits</th>
+          <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>{{ el.id }}</td>
+          <td>{{ el.skola }}</td>
+          <td>{{ el.skolenuskaits }}</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    
     {% endif %}
   {% endfor %}
 
