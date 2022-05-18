@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+from curses.ascii import HT
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.views.generic.base import TemplateView
 from django.template import loader
@@ -37,7 +38,8 @@ def create(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('profile')
+            template = loader.get_template('accounts/profile.html')
+            return HttpResponse(template.render({}, request),data)
         else:
             error='Forma bija uzrakstīta kļūdaini'
             
