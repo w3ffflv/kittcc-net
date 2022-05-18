@@ -61,6 +61,23 @@
       {% endif %}
     {% endif %}
   {% endfor %}
+
+    {% if user.access == 0 %}
+    {% for el in students %}
+    {% if user.skola == el.skola %}
+
+    <p>Skola: {{ el.skola }}</p>
+        <p>Novads: {{ el.novads}}</p>
+        <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
+        <p>Pirmdiena: {{ el.pirmdiena }}</p>
+        <p>Otrdiena: {{ el.otrdiena }}</p>
+        <p>Trešdiena: {{ el.tresdiena }}</p>
+        <p>Ceturdiena: {{ el.ceturdiena }}</p>
+        <p>Piekdiena: {{ el.piekdiena }}</p>
+        <a href="{% url 'school-update' el.id %}" class="btn btn-success">Izmainīt ēdienkarti</a>
+        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+
+
 {% else %}
 <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/">
 {% endif %}
