@@ -13,7 +13,7 @@ from .forms import UserForm
 class SchoolUpdateView(UpdateView):
     model = User
     template_name = 'update_school_info.html'
-    
+    context_object_name = 'schooluser'
     form_class = UserForm
 
 class SchoolDetailView(DetailView):
@@ -64,6 +64,7 @@ def contact(request):
 
 
 class ProfileView(LoginRequiredMixin,TemplateView):
+    context_object_name = 'schooluser'
     template_name = 'accounts/profile.html'
 
 

@@ -151,7 +151,96 @@
 
                     <!-- Content Row -->
 
-                    
+{% if user.access == 0 and user.id == schooluser.id %}
+<div class="content" style="margin-top: 30px; ">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="justify-content-center">
+          <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                              PIRMDIENA</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.pirmdiena }}</div>
+                      </div>
+                      <div class="col-auto">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="justify-content-center" style="padding-top: 10px;">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            OTRDIENA</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.otrdiena }}</div>
+                    </div>
+                    <div class="col-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="justify-content-center"style="padding-top: 10px;">
+      <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                          TRESDIENA</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.tresdiena }}</div>
+                  </div>
+                  <div class="col-auto">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="justify-content-center" style="padding-top: 10px;">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        CETURDIENA</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.ceturdiena }}</div>
+                </div>
+                <div class="col-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="justify-content-center" style="padding-top: 10px;">
+  <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+          <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                      PIEKTDIENA</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.piekdiena }}</div>
+              </div>
+              <div class="col-auto">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+        <span>{{ error }}</span>
+        <button class="btn btn-success justify-content-center" type="submit" style="margin-top: 30px;">Atjaunināt Ēdienkarti</button>
+    </form>
+</div>
+{% elif user.access == 1 and user.novads == schooluser.novads %}
 <div class="content" style="margin-top: 30px; ">
     <form method="POST">
         {% csrf_token %}
@@ -241,5 +330,96 @@
     </form>
 </div>
 
+{% if user.access == 2 %}
+<div class="content" style="margin-top: 30px; ">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="justify-content-center">
+          <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                              PIRMDIENA</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.pirmdiena }}</div>
+                      </div>
+                      <div class="col-auto">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
+      <div class="justify-content-center" style="padding-top: 10px;">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            OTRDIENA</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.otrdiena }}</div>
+                    </div>
+                    <div class="col-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="justify-content-center"style="padding-top: 10px;">
+      <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                          TRESDIENA</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.tresdiena }}</div>
+                  </div>
+                  <div class="col-auto">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="justify-content-center" style="padding-top: 10px;">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        CETURDIENA</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.ceturdiena }}</div>
+                </div>
+                <div class="col-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="justify-content-center" style="padding-top: 10px;">
+  <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+          <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                      PIEKTDIENA</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{ form.piekdiena }}</div>
+              </div>
+              <div class="col-auto">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+        <span>{{ error }}</span>
+        <button class="btn btn-success justify-content-center" type="submit" style="margin-top: 30px;">Atjaunināt Ēdienkarti</button>
+    </form>
+</div>
+{% else %}
+<meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile/">
+    {% endif %}
 {% endblock %}
