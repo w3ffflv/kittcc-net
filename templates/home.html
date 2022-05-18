@@ -76,7 +76,9 @@
         <p>Piekdiena: {{ el.piekdiena }}</p>
         <a href="{% url 'school-update' el.id %}" class="btn btn-success">Izmainīt ēdienkarti</a>
         <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
-
+        {% endif %}
+        {% endif %}
+      {% endfor %}
 
 {% else %}
 <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/">
