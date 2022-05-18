@@ -154,14 +154,25 @@
     {% for el in students %}
       {% if el.access == 0 %}
 
-    
-      <div class="features">
-        <div class="alert alert-warning">
-          <p>Skola: {{ el.skola }}</p>
-          <p>Novads: {{ el.novads}}</p>
-          <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Novads: {{ el.novads}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Skola: {{ el.skola }}</div>
+                    </div>
+                    <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+                    <div class="col-auto">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+    
+     
 
 
    
@@ -172,12 +183,21 @@
   {% for el in students %}
     {% if user.novads == el.novads %}
       {% if el.access == 0 %}
-    <div class="features">
-      <div class="alert alert-warning">
-        <p>Skola: {{ el.skola }}</p>
-        <p>Novads: {{ el.novads}}</p>
-        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
-      </div>
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Novads: {{ el.novads}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Skola: {{ el.skola }}</div>
+                    </div>
+                    <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+                    <div class="col-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
       {% endif %}
     {% endif %}
