@@ -143,3 +143,7 @@ body.loggedin
   text-align: left;
 } 
 
+.update {
+  margin: 100px auto;
+
+}
