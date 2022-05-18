@@ -85,7 +85,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
+                    {% if user.access == 1 or user.access == 2 %}
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
@@ -98,6 +98,8 @@
                             </div>
                         </div>
                     </form>
+                    {% else %}
+                    {% endif %}
 
                     <ul class="navbar-nav ml-auto">
 
@@ -106,6 +108,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
+                            
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                 aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
@@ -324,6 +327,8 @@
 							</div>
 						</div>
 					</div>
+
+
 					<div class="col-xl-3 col-md-6 mb-4">
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
