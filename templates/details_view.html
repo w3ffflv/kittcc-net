@@ -3,8 +3,7 @@
 {% block title %} {{ schooluser.skola }} {% endblock %}
 
 {% block content %}
-    {% if user.access == 1 %}
-        {% if user.novads == schooluser.novads %}
+    {% if user.access == 1 and user.novads == schooluser.novads %}
     <div class="features">
         <h1>{{ schooluser.skola }}</h1>
         <h1>{{ schooluser.skolenuskaits }}</h1>
@@ -16,10 +15,9 @@
                     <h1>{{ schooluser.skolenuskaits }}</h1>
                     <h1>{{ schooluser.apestasporcijas }}</h1>
                 </div>
-                
+
             {% else %}
             <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile/">
-        {% endif %}
     {% endif %}
 
 {% endblock %}
