@@ -1,6 +1,4 @@
-from curses.ascii import HT
-from django import http
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.template import loader
@@ -39,7 +37,6 @@ def create(request):
     data = {
         'form':form
     }
-
     template = loader.get_template('update_school_info.html')
     return HttpResponse(template.render({}, request),data)
    
