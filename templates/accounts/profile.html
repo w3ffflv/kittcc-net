@@ -62,8 +62,7 @@
                 </a>
 			{% else %}	
 			{% endif %}
-			{% if user.access == 0 %}
-				{% if user.id == form.id %}
+			{% if user.id == request.id %}
 			<li class="nav-item">
                 <a class="nav-link collapsed" href="{% url 'school-update' user.id %}">
                     <i class="fas fa-fw fa-graduation-cap"></i>
