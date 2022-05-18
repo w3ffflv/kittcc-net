@@ -347,7 +347,9 @@
                     </div>
                 </div>
 
-                {% else %}
+                {% if user.access == 2 %}
+                {% for el in students %}
+                {% if el.access == 0 %}
                     
 
     
@@ -366,8 +368,7 @@
                         </div>
                     </div>
                 </div>
-                {% for el in students %}
-                    {% if el.access == 0 %}
+                
                 <div class="features">
                     <div class="alert alert-warning">
                         <p>Skola: {{ el.skola }}</p>
@@ -384,6 +385,8 @@
                 </div>
                     {% endif %}
                 {% endfor %}
+                {% else %}
+                {% endif %}
 
 
         
