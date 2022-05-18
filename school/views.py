@@ -14,7 +14,7 @@ class SchoolUpdateView(UpdateView):
     model = User
     template_name = 'update_school_info.html'
     
-    fields = ['pirmdiena', 'otrdiena','tresdiena','ceturdiena','piekdiena']
+    form_class = UserForm
 
 class SchoolDetailView(DetailView):
     model = User
