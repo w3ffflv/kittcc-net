@@ -11,11 +11,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserForm
 
 class SchoolUpdateView(UpdateView):
-    def home(request):
-        students = User.objects.all() 
-        return render(request,"accounts/profile.html", {'students':students})
     model = User
-    students = User.objects.all() 
     template_name = 'update_school_info.html'
     
     form_class = UserForm
@@ -69,6 +65,9 @@ def contact(request):
 
 
 class ProfileView(LoginRequiredMixin,TemplateView):
+    def home(request):
+        students = User.objects.all() 
+        return render(request,"accounts/profile.html", {'students':students})
     template_name = 'accounts/profile.html'
 
 
