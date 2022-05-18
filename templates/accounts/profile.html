@@ -340,7 +340,7 @@
                     {% elif user.access == 1 %}
                         {% for el in students %}
                             {% if user.novads == el.novads %}
-                                {% if el.access == 1 %}
+                                {% if el.access == 0 %}
 					<div class="col-xl-3 col-md-6 mb-4">
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
