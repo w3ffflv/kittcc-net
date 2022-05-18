@@ -153,254 +153,63 @@
                
 
                     <!-- Content Row -->
-					{% if user.access == 0 %}
-
-                    <div class="row">
-                        
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Skola</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.skola }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                NOVADS</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.novads }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Appēstās porcijas 
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: {% widthratio user.apestasporcijas user.skolenuskaits 100 %}%" aria-valuenow="100"
-                                                            aria-valuemin="0"
-                                                            aria-valuemax="100">{% widthratio user.apestasporcijas user.skolenuskaits 100 %}%</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Appēsto porciju skaits</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.apestasporcijas }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                PIRMDIENA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.pirmdiena }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                OTRDIENA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.otrdiena }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                TREŠDIENA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.tresdiena }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                CETURDIENA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.ceturdiena }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                PIEKTDIENA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.piekdiena }}</div>
-                                        </div>
-                                        <div class="col-auto">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-			
-                {% elif user.access == 1  %}
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        PASVALDIBA</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">PASVALDIBA</div>
-                                </div>
-                                <div class="col-auto">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        NOVADS</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ user.novads }}</div>
-                                </div>
-                                <div class="col-auto">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {% if user.access == 2 %}
-                {% for el in students %}
-                {% if el.access == 0 %}
-                    
+					{% if user.access == 2 %}
+    {% for el in students %}
+      {% if el.access == 0 %}
 
     
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        VALDIBA</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">VALDIBA</div>
-                                </div>
-                                <div class="col-auto">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <div class="alert alert-warning">
-                        <p>Skola: {{ el.skola }}</p>
-                        <p>Novads: {{ el.novads}}</p>
-                        <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
-                        <p>Pirmdiena: {{ el.pirmdiena }}</p>
-                        <p>Otrdiena: {{ el.otrdiena }}</p>
-                        <p>Trešdiena: {{ el.tresdiena }}</p>
-                        <p>Ceturdiena: {{ el.ceturdiena }}</p>
-                        <p>Piekdiena: {{ el.piekdiena }}</p>
-                        <a href="{% url 'school-update' el.id %}" class="btn btn-success">Izmainīt ēdienkarti</a>
-                        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
-                    </div>
-                </div>
-                    {% endif %}
-                {% endfor %}
-                {% else %}
-                {% endif %}
+      <div class="features">
+        <div class="alert alert-warning">
+          <p>Skola: {{ el.skola }}</p>
+          <p>Novads: {{ el.novads}}</p>
+          <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
+          <p>Pirmdiena: {{ el.pirmdiena }}</p>
+          <p>Otrdiena: {{ el.otrdiena }}</p>
+          <p>Trešdiena: {{ el.tresdiena }}</p>
+          <p>Ceturdiena: {{ el.ceturdiena }}</p>
+          <p>Piekdiena: {{ el.piekdiena }}</p>
+          <a href="{% url 'school-update' el.id %}" class="btn btn-success">Izmainīt ēdienkarti</a>
+          <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+        </div>
+      </div>
+
+
+   
+    {% endif %}
+  {% endfor %}
+
+{% elif user.access == 1 %}
+  {% for el in students %}
+    {% if user.novads == el.novads %}
+      {% if el.access == 0 %}
+    <div class="features">
+      <div class="alert alert-warning">
+        <p>Skola: {{ el.skola }}</p>
+        <p>Novads: {{ el.novads}}</p>
+        <p>Apēstās porcijas: {{ el.apestasporcijas }}</p>
+        <p>Pirmdiena: {{ el.pirmdiena }}</p>
+        <p>Otrdiena: {{ el.otrdiena }}</p>
+        <p>Trešdiena: {{ el.tresdiena }}</p>
+        <p>Ceturdiena: {{ el.ceturdiena }}</p>
+        <p>Piekdiena: {{ el.piekdiena }}</p>
+        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+      </div>
+    </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+<meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile">
+{% endif %}
+
 
 
         
 
                 
                        
-                
 
                     <div class="row">
-
-                      
-
-                             
-
                     <!-- Content Row -->
                     <div class="row">
 
