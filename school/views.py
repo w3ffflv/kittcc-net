@@ -7,7 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from . models import User
 from django.views.generic import DetailView, UpdateView
-
+from django.contrib.auth.decorators import login_required
 
 #class SchoolUpdateView(UpdateView):
  #   model = User
@@ -18,7 +18,7 @@ class SchoolDetailView(DetailView):
     template_name = 'details_view.html'
     context_object_name = 'schooluser'
 
-
+@login_required
 def home(request):
     students = User.objects.all()
     novads = User.objects.filter(user=request.user).values()
@@ -33,11 +33,11 @@ def login(request):
 
 
    
-
+@login_required
 def about(request):
     template = loader.get_template('about.html')
     return HttpResponse(template.render({}, request))
-
+@login_required
 def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render({}, request))
