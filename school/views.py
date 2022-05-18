@@ -9,6 +9,7 @@ from django.views.generic.detail import DetailView
 from . models import User
 from django.views.generic import DetailView, UpdateView
 from django.contrib.auth.decorators import login_required
+from .forms import UserForm
 
 class SchoolUpdateView(UpdateView):
     model = User
@@ -32,6 +33,15 @@ def login(request):
     return HttpResponse(template.render({}, request))
  
 
+def create(request):
+    form = UserForm()
+
+    data = {
+        'form':form
+    }
+
+    template = loader.get_template('update_school_info.html')
+    return HttpResponse(template.render({}, request),data)
 
 
    
