@@ -20,23 +20,32 @@
     {% for el in students %}
       {% if el.access == 0 %}
 
-    <table class="table table-bordered">
+    <table class="table">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Skola</th>
           <th scope="col">Skolenu skaits</th>
-          <th scope="col">Profils<a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a></th>
+          <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
         </tr>
       </thead>
       <tbody>
-        
-          <th scope="row">{{ el.id }}</th>
+        <tr>
+          <th scope="row">1</th>
+          <td>{{ el.id }}</td>
           <td>{{ el.skola }}</td>
           <td>{{ el.skolenuskaits }}</td>
-      </tbody>
-    </table>
+          <td>@mdo</td>
+        </tr>
 
+
+    <div class="features">
+      <div class="alert alert-warning">
+        <p>Skola: {{ el.skola }}</p>
+        <p>Skolenu skaits: {{ el.skolenuskaits }}</p>
+        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+      </div>
+    </div>
     {% endif %}
   {% endfor %}
 
