@@ -16,32 +16,15 @@
     <a href="{% url 'logout' %}?next=/"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 </nav>
-
-<form>
-    <div class="form-group">
-      <label for="formGroupExampleInput">Pirmdiena</label>
-      <input type="text" class="form-control" id="pirmdiena" placeholder="Pirmdiena">
-    </div>
-
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Otrdiena</label>
-      <input type="text" class="form-control" id="otrdiena" placeholder="Otrdiena">
-    </div>
-
-    <div class="form-group">
-        <label for="formGroupExampleInput2">Trešdiena</label>
-        <input type="text" class="form-control" id="tresdiena" placeholder="Trešdiena">
-      </div>
-
-    <div class="form-group">
-        <label for="formGroupExampleInput2">Ceturdiena</label>
-        <input type="text" class="form-control" id="ceturdiena" placeholder="Ceturdienat">
-      </div>
-
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Piekdiena</label>
-        <input type="text" class="form-control" id="piekdiena" placeholder="Piekdiena">
-      </div>
-  </form>
+<div>
+    <form method="POST">
+        <input type="text" placeholder="Pirmdiena" class="form-control"><br>
+        <input type="text" placeholder="Otrdiena" class="form-control"><br>
+        <input type="text" placeholder="Tresdiena" class="form-control"><br>
+        <input type="text" placeholder="Ceturdiena" class="form-control"><br>
+        <input type="text" placeholder="Piekdiena" class="form-control"><br>
+        <button class="btn btn-success" type="submit">Atjaunināt Ēdienkarti</button>
+    </form>
+</div>
 
 {% endblock %}
