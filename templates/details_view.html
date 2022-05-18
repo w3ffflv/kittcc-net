@@ -23,7 +23,7 @@
 
             </h1>
         </div>
-        {% elif user.id = request.user.id %}
+        {% elif user.access == 0 and user.id == request.user.id %}
         <div class="features">
             <h1>Skola: {{ schooluser.skola }}</h1>
             <h1>Skolēnu skaits: {{ schooluser.skolenuskaits }}</h1>
