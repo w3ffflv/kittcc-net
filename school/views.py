@@ -38,8 +38,7 @@ def create(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            template = loader.get_template('accounts/profile.html')
-            return HttpResponse(template.render({}, request),data)
+            return redirect('/')
         else:
             error='Forma bija uzrakstīta kļūdaini'
             
