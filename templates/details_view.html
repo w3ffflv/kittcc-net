@@ -12,150 +12,72 @@
             {% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %} %
         </h1>
     </div>
-            {% elif user.access == 2 %}
+        {% elif user.access == 2 %}
 
-            <div class="container py-5">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ <div role="tabpanel" class=" tab-pane"  id="skill" >
+              <div class="skill-section">
                 <div class="row">
-              
-                  <!-- For demo purpose -->
-                  <div class="col-lg-12 mx-auto mb-5 text-white text-center">
-                    <h1 class="display-4">Bootstrap 4 circular progress bar</h1>
-                    <p class="lead mb-0">Pure CSS solution to create a circular progress bar compatible with Bootstrap 4. </p>
-                    <p class="lead">Snippet by <a href="https://bootstrapious.com/snippets" class="text-white">
-                              <u>Bootstrapious</u></a>
-                    </p>
-                  </div>
-                  <!-- END -->
-              
-                  <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="bg-white rounded-lg p-5 shadow">
-                      <h2 class="h6 font-weight-bold text-center mb-4">Overall progress</h2>
-              
-                      <!-- Progress bar 1 -->
-                      <div class="progress mx-auto" data-value='80'>
-                        <span class="progress-left">
-                                      <span class="progress-bar border-primary"></span>
-                        </span>
-                        <span class="progress-right">
-                                      <span class="progress-bar border-primary"></span>
-                        </span>
-                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                          <div class="h2 font-weight-bold">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}<sup class="small">%</sup></div>
+                  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <div class="progress">
+                        <div class="progress-bar  active" role="progressbar" aria-valuenow="  45"     aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                          <span class="skill-name"><strong>Pirmdiena</strong></span>
                         </div>
-                      </div>
-                      <!-- END -->
-              
-                      <!-- Demo info -->
-                      <div class="row text-center mt-4">
-                        <div class="col-6 border-right">
-                          <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
-                        </div>
-                        <div class="col-6">
-                          <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
-                        </div>
-                      </div>
-                      <!-- END -->
                     </div>
                   </div>
-              
-                  <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="bg-white rounded-lg p-5 shadow">
-                      <h2 class="h6 font-weight-bold text-center mb-4">Work hours</h2>
-              
-                      <!-- Progress bar 2 -->
-                      <div class="progress mx-auto" data-value='25'>
-                        <span class="progress-left">
-                                      <span class="progress-bar border-danger"></span>
-                        </span>
-                        <span class="progress-right">
-                                      <span class="progress-bar border-danger"></span>
-                        </span>
-                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                          <div class="h2 font-weight-bold">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}<sup class="small">%</sup></div>
-                        </div>
-                      </div>
-                      <!-- END -->
-              
-                      <!-- Demo info-->
-                      <div class="row text-center mt-4">
-                        <div class="col-6 border-right">
-                          <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
-                        </div>
-                        <div class="col-6">
-                          <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
-                        </div>
-                      </div>
-                      <!-- END -->
-                    </div>
-                  </div>
-              
-                  <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="bg-white rounded-lg p-5 shadow">
-                      <h2 class="h6 font-weight-bold text-center mb-4">Server time</h2>
-              
-                      <!-- Progress bar 3 -->
-                      <div class="progress mx-auto" data-value='76'>
-                        <span class="progress-left">
-                                      <span class="progress-bar border-success"></span>
-                        </span>
-                        <span class="progress-right">
-                                      <span class="progress-bar border-success"></span>
-                        </span>
-                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                          <div class="h2 font-weight-bold">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}<sup class="small">%</sup></div>
-                        </div>
-                      </div>
-                      <!-- END -->
-              
-                      <!-- Demo info -->
-                      <div class="row text-center mt-4">
-                        <div class="col-6 border-right">
-                          <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
-                        </div>
-                        <div class="col-6">
-                          <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
-                        </div>
-                      </div>
-                      <!-- END -->
-                    </div>
-                  </div>
-              
-                  <div class="col-xl-3 col-lg-6 mb-4">
-                    <div class="bg-white rounded-lg p-5 shadow">
-                      <h2 class="h6 font-weight-bold text-center mb-4">Total overdue</h2>
-              
-                      <!-- Progress bar 4 -->
-                      <div class="progress mx-auto" data-value='12'>
-                        <span class="progress-left">
-                                      <span class="progress-bar border-warning"></span>
-                        </span>
-                        <span class="progress-right">
-                                      <span class="progress-bar border-warning"></span>
-                        </span>
-                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                          <div class="h2 font-weight-bold">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}<sup class="small">%</sup></div>
-                        </div>
-                      </div>
-                      <!-- END -->
-              
-                      <!-- Demo info -->
-                      <div class="row text-center mt-4">
-                        <div class="col-6 border-right">
-                          <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
-                        </div>
-                        <div class="col-6">
-                          <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
-                        </div>
-                      </div>
-                      <!-- END -->
-                    </div>
-                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 text-left">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}%</div>
                 </div>
-              </div>
-         
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <div class="progress">
+                        <div class="progress-bar  active" role="progressbar" aria-valuenow="  45"     aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                          <span class="skill-name"><strong>Otrdiena</strong></span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 text-left">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}%</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <div class="progress">
+                        <div class="progress-bar  active" role="progressbar" aria-valuenow="  45"     aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                          <span class="skill-name"><strong>Tresdiena 3</strong></span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 text-left">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}%</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <div class="progress">
+                        <div class="progress-bar  active" role="progressbar" aria-valuenow="  45"     aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                          <span class="skill-name"><strong>Ceturdiena</strong></span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 text-left">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}%</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <div class="progress">
+                        <div class="progress-bar  active" role="progressbar" aria-valuenow="  45"     aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                          <span class="skill-name"><strong>Piekdiena</strong></span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 text-left">{% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %}%</div>
+                </div>    
+                </div>
+    </div>
+    </section>    
+                 
 
-            {% else %}
-            <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile/">
+        {% else %}
+        <meta http-equiv="REFRESH" content="0;url=https://kittcc.net/accounts/profile/">
     {% endif %}
 
 {% endblock %}

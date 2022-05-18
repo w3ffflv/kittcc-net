@@ -143,83 +143,109 @@ body.loggedin
   text-align: left;
 } 
 
-.progress {
-  width: 150px;
-  height: 150px;
-  background: none;
-  position: relative;
+.progress{
+	border-radius: 20px;
+	height: 25px;
+}
+.skill-name{
+	text-transform: uppercase;
+	margin-left: 10px;
+	padding-left:10px;
+	padding-top: 2.5px;
+	float:left;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.1em;
 }
 
-.progress::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 6px solid #eee;
-  position: absolute;
-  top: 0;
-  left: 0;
+.progress .progress-bar, .progress .progress-bar.progress-bar-default {
+    background-color: #46a546 ;
+}
+.progress  .progress-bar{
+    animation-name: animateBar;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1.0s;
 }
 
-.progress>span {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 1;
+@keyframes animateBar {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
 }
 
-.progress .progress-left {
-  left: 0;
+/*media Queries*/
+
+@media (min-width: 768px) and (max-width: 991px){
+	#about-section h1{font-size: 2.0em;}
+	.nav-pills li a{font-size: 1.3em !important;}
+
+
 }
 
-.progress .progress-bar {
-  width: 100%;
-  height: 100%;
-  background: none;
-  border-width: 6px;
-  border-style: solid;
-  position: absolute;
-  top: 0;
+
+@media (max-width: 767px){
+	#about-section h1{
+		margin-top: 90px !important;
+		font-size: 1.5em;}
+	.nav-pills li a{font-size: 1.3em !important;}
+	.about-me-text{font-size: 1.0em;}
+	.btn-tab .btn-overide{font-size: 0.8em;
+		width: 200px;
+	}
+	#about-section{
+		height: 750px;
+	}
+	#about-section h1{
+	margin-top: 50px;
+	
+}
+}
+@media (max-width: 456px){
+	#about-section{
+		height: 730px;
+	}
+	.nav-pills li a{font-size: 0.9em !important;}
 }
 
-.progress .progress-left .progress-bar {
-  left: 100%;
-  border-top-right-radius: 80px;
-  border-bottom-right-radius: 80px;
-  border-left: 0;
-  -webkit-transform-origin: center left;
-  transform-origin: center left;
+@media(max-width: 648px){
+	#about-section{
+		height: 800px;
+	}
 }
 
-.progress .progress-right {
-  right: 0;
+@media (min-width: 481px) and (max-width: 553px){
+	#about-section{
+		height: 900px;
+	}
 }
 
-.progress .progress-right .progress-bar {
-  left: -100%;
-  border-top-left-radius: 80px;
-  border-bottom-left-radius: 80px;
-  border-right: 0;
-  -webkit-transform-origin: center right;
-  transform-origin: center right;
+@media (max-width: 479px){
+	.btn-hire{
+		margin-top: 20px!important;
+		
+	}
+	.btn-contact{
+		margin-top: 10px !important;
+	}
+
+	#about-section{
+		height: 950px;
+	}
 }
 
-.progress .progress-value {
-  position: absolute;
-  top: 0;
-  left: 0;
+@media (max-width: 442px){
+	#about-section{
+		height: 980px;
+	}
 }
 
-.rounded-lg {
-  border-radius: 1rem;
+@media (max-width: 411px){
+	#about-section{
+		height: 1020px;
+	}
 }
 
-.text-gray {
-  color: #aaa;
-}
-
-div.h4 {
-  line-height: 1rem;
+@media (max-width: 373px){
+	#about-section{
+		height: 1050px;
+	}
 }
