@@ -9,7 +9,7 @@
         <h1>Skolēnu skaits: {{ schooluser.skolenuskaits }}</h1>
         <h1>Apēstās porcijas: {{ schooluser.apestasporcijas }} </h1>
         <h1>Apestās porcijas:
-            {% widthratio schooluser.apestasporcijas schooluser.skolenuskaits 100 %} %
+            {% widthratio (schooluser.apestasporcijas / schooluser.skolenuskaits) 100 %} %
         </h1>
     </div>
         {% elif user.access == 2 %}
