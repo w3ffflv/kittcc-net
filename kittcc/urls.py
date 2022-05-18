@@ -23,7 +23,6 @@ from school.views import SchoolSeacrhListView
 urlpatterns = [
     path('admin/', admin.site.urls, name=admin),     
     path('', include('school.urls')),
-    path('search/', SchoolSeacrhListView.as_view(), name='school-name')
     
     
 ]
