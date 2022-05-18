@@ -42,8 +42,6 @@ def create(request):
 
     template = loader.get_template('update_school_info.html')
     return HttpResponse(template.render({}, request),data)
-
-
    
 @login_required
 def about(request):
