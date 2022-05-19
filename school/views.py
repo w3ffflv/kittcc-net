@@ -19,6 +19,12 @@ class SchoolUpdateView(UpdateView):
     context_object_name = 'schooluser'
     form_class = UserForm
 
+class SchoolUpdateSettingsView(UpdateView):
+    model = User
+    template_name = 'update_school_settings.html'
+    context_object_name = 'schooluser'
+    form_class = UserForm
+
 class SchoolDetailView(DetailView):
     model = User
     template_name = 'details_view.html'
