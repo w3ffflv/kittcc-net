@@ -1,6 +1,4 @@
-from curses.ascii import HT
-import json
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic.base import TemplateView
 from django.template import loader
