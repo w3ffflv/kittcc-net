@@ -162,7 +162,9 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Novads: {{ el.novads}}</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">Skola: {{ el.skola }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Skola: {{ el.skola }}
+                        <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>    
+                        </div>
                     </div>
                     
                     <div class="col-auto">
@@ -172,7 +174,7 @@
         </div>
         
     </div>
-    <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+    
     
      
 
