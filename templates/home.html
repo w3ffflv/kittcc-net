@@ -154,41 +154,30 @@
     {% for el in students %}
       {% if el.access == 0 %}
 
-      <td>{{ el.id }}</td>
-      <form>
-          {% for el in form %}
-              <td>{{ el }}</td>
-          {% endfor %}
-      </form>
-      <td>
-          <button class="btn-sm btn-warning cancel_form"><i class="fa fa-times-circle"></i></button>
-          <button class="btn-sm btn-success save_form"><i class="fa fa-save"></i></button>
-      </td>
-  {% else %}
-      <td><span class="font-weight-bold">{{ user.id }}</span></td>
-      <td><span class="font-weight-normal">{{ user.skola}}</span></td>
-      <td><span class="font-weight-normal">{{ user.novads }}</span></td>
-      </td>
-      <td>
-          <div class="btn-group">
-              <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="icon icon-sm">
-                          <span class="fas fa-ellipsis-h icon-dark"></span>
-                      </span>
-                  <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                  <a class="dropdown-item edit_item" href="#">
-                      <span class="fas fa-edit mr-2"></span>Edit
-                  </a>
-                  <a class="dropdown-item text-danger delete_item"
-                     data-href="#">
-                      <span class="fas fa-trash-alt mr-2"></span>Remove
-                  </a>
-              </div>
-          </div>
-      </td>       
+
+      <div class="content">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Novads: {{ el.novads}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Skola: {{ el.skola }}</div>
+                    </div>
+                    
+                    <div class="col-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <a href="{% url 'school-detail' el.id %}" class="btn btn-warning">ATVERT</a>
+    
+     
+
+
+   
     {% endif %}
   {% endfor %}
 
