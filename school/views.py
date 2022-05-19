@@ -27,7 +27,7 @@ class SchoolDetailView(DetailView):
 @login_required
 def home(request):
     students = User.objects.all() 
-    return render(request,"home.html", {'students':students})
+    return render(request,"skolas.html", {'students':students})
 
 
 def login(request):
