@@ -15,6 +15,6 @@ urlpatterns = [
      path('contact/', views.contact, name="contact"),
      path('accounts/profile/', views.ProfileView.as_view(), name="profile"),
      path('skolas/', views.home, name="home"),  
-     path('user/<int:pk>', views.SchoolDetailView.as_view(), name="school-detail"),
+     path('skola/<int:pk>', views.SchoolDetailView.as_view(), name="school-detail"),
      path('update/<int:pk>',views.SchoolUpdateView.as_view(), name='school-update'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
