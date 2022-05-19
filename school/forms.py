@@ -4,7 +4,7 @@ from django.forms import ModelForm,TextInput
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ['pirmdiena', 'otrdiena', 'tresdiena', 'ceturdiena', 'piekdiena', 'apestasporcijas']
+        fields = ['pirmdiena', 'otrdiena', 'tresdiena', 'ceturdiena', 'piekdiena', 'apestasporcijas', 'skolenuskaits']
 
         widgets = {
             "pirmdiena":TextInput(attrs={
@@ -31,5 +31,10 @@ class UserForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Appēstās porcijas'
             }),
+            "skolenuskaits":TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Skolēnu skaits'
+            }),
+            
             
         }
