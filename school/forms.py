@@ -1,5 +1,5 @@
 from .models import User
-from django.forms import IntegerField, ModelForm,TextInput
+from django.forms import ModelForm, NumberInput,TextInput
 
 class UserForm(ModelForm):
     class Meta:
@@ -27,11 +27,11 @@ class UserForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Piektdiena'
             }),
-            "apestasporcijas":IntegerField(attrs={
+            "apestasporcijas":NumberInput(attrs={
                 'class': 'form-control',
                 'placeholder': '0'
             }),
-            "skolenuskaits":IntegerField(attrs={
+            "skolenuskaits":NumberInput(attrs={
                 'class': 'form-control',
                 'placeholder': '0'
             }),
