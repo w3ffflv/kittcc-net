@@ -1,5 +1,4 @@
 from turtle import title
-from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic.base import TemplateView
@@ -33,6 +32,7 @@ class SchoolDetailView(DetailView):
 
 @login_required
 def home(request):
+
     students = User.objects.all() 
     return render(request,"skolas.html", {'students':students})
 
