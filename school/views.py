@@ -1,4 +1,3 @@
-from msilib.schema import ListView
 from turtle import title
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -6,6 +5,7 @@ from django.views.generic.base import TemplateView
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
+from django.views.generic import ListView
 from . models import User
 from django.views.generic import DetailView, UpdateView
 from django.contrib.auth.decorators import login_required
