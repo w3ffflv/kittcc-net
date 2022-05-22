@@ -1,3 +1,5 @@
+from msilib.schema import ListView
+from turtle import title
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic.base import TemplateView
@@ -74,4 +76,12 @@ class ProfileView(LoginRequiredMixin,TemplateView):
     context_object_name = 'schooluser'
     template_name = 'accounts/profile.html'
 
+class SchoolSearchView(ListView):
+    model = User
+    template_name = 'skolas.html'
+    context_object_name = 'schooluser'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return User.objects.filter(title__icontains=query).order_by('skolas')
 
