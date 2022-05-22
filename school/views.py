@@ -83,5 +83,5 @@ class SchoolSearchView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return User.objects.filter(title__icontains=query).order_by('skola')
+        return User.objects.filter(username__icontains=query).order_by('-skola')
 
