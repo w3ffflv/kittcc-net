@@ -6,7 +6,6 @@ from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from django.views.generic import ListView
-from jmespath import search
 from . models import User
 from django.views.generic import DetailView, UpdateView
 from django.contrib.auth.decorators import login_required
@@ -84,6 +83,5 @@ class SchoolSearchView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        if search:
-            return User.objects.filter(username__icontains=query).order_by('-skola')
+        return User.objects.filter(title__icontains=query).order_by('-skola')
 
