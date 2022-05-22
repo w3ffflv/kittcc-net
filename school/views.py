@@ -86,4 +86,4 @@ def SchoolSearchView(request):
     context = {
         'data': data
     }
-    return render(request, 'skolas/search.html',context)
+    return render(request, 'skolas_search.html',context)
