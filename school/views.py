@@ -80,10 +80,10 @@ class ProfileView(LoginRequiredMixin,TemplateView):
 def SchoolSearchView(request):
     if 'q' in request.GET:
         q = request.GET['q']
-        user = User.objects.filter(skola__icontains=q)
+        el = User.objects.filter(skola__icontains=q)
     else:
-        user = User.objects.all()
+        el = User.objects.all()
     context = {
-        'user': user
+        'el': el
     }
     return render(request, 'skolas_search.html',context)
