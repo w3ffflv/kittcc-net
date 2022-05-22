@@ -1,4 +1,5 @@
 from turtle import title
+from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic.base import TemplateView
@@ -79,9 +80,10 @@ class ProfileView(LoginRequiredMixin,TemplateView):
 class SchoolSearchView(ListView):
     model = User
     template_name = 'skolas.html'
-    context_object_name = 'schooluser'
-
-    def get_queryset(self):
-        query = self.request.GET.get('q')
-        return User.objects.filter(username__icontains=query).order_by('-id')
-
+    if 'q' in request.GET:
+        q = request.GET['q']
+        data = User.objects.filter(skola__icontains=q)
+    data = User.objects.all()
+    context = {
+        'data': data
+    }
