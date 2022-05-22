@@ -86,5 +86,4 @@ def SchoolSearchView(request):
     context = {
         'data': data
     }
-    template = loader.get_template('skolas.html')
-    return HttpResponse(template.render({}, request))
+    return render(request, 'skolas/search.html',context)
