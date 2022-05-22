@@ -84,6 +84,6 @@ def SchoolSearchView(request):
     else:
         data = User.objects.all()
     context = {
-        'data': data
+        'data': User
     }
     return render(request, 'skolas_search.html',context)
