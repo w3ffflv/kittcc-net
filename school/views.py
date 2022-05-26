@@ -77,7 +77,7 @@ class ProfileView(LoginRequiredMixin,TemplateView):
     context_object_name = 'schooluser'
     template_name = 'accounts/profile.html'
 
-def SchoolSearchView(request):
+def schoolsearch(request):
     if 'q' in request.GET:
         q = request.GET['q']
         el = User.objects.filter(skola__icontains=q)
