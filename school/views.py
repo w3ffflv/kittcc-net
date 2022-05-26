@@ -86,4 +86,4 @@ def schoolsearch(request):
     context = {
         'el': el
     }
-    return render(request, 'skolas_search.html',context)
+    return render(request, 'skolas.html',context)
