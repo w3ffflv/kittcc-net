@@ -32,8 +32,15 @@ class SchoolDetailView(DetailView):
 
 @login_required
 def home(request):
+    search_query = request.GET.get('q','')
 
-    students = User.objects.all() 
+    if search_query:
+        students = User.objects.filter(skola__icontains=search_query)
+    else:
+        students = User.objects.all() 
+
+    
+
     return render(request,"skolas.html", {'students':students})
 
 
@@ -77,12 +84,4 @@ class ProfileView(LoginRequiredMixin,TemplateView):
     context_object_name = 'schooluser'
     template_name = 'accounts/profile.html'
 
-def schoolsearch(request):
-    
-    if 'q' in request.GET:
-        q = request.GET['q']
-        students = User.objects.filter(skola__icontains=q)
-    else:
-        students = User.objects.all()
-    return render(request,"skolas.html", {'students':students})
 
