@@ -78,8 +78,6 @@ class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
 
 def schoolsearch(request):
-
-    students = User.objects.all() 
     
     if 'q' in request.GET:
         q = request.GET['q']
