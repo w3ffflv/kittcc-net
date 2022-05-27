@@ -35,7 +35,7 @@ def home(request):
     search_query = request.GET.get('q','')
 
     if search_query:
-        students = User.objects.filter(skola__icontains=search_query)
+        students = User.objects.filter(skola__icontains=search_query, novads__icontains=search_query)
     else:
         students = User.objects.all() 
 
