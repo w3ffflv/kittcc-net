@@ -10,6 +10,7 @@ from . models import User
 from django.views.generic import DetailView, UpdateView
 from django.contrib.auth.decorators import login_required
 from .forms import UserForm
+from django.db.models import Q
 
 
 
@@ -35,7 +36,7 @@ def home(request):
     search_query = request.GET.get('q','')
 
     if search_query:
-        students = User.objects.filter(skola__icontains=search_query, novads__icontains=search_query)
+        students = User.objects.filter(Q(skola__icontains=search_query) | Q(novads__icontains=search_query))
     else:
         students = User.objects.all() 
 
