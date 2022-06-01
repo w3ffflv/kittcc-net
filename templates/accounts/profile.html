@@ -34,7 +34,45 @@
     <div id="wrapper">
 
        
-        
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/accounts/profile">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">ĒDINĀŠANAS MONITORINGA
+                    SISTĒMA
+                </div>
+            </a>
+
+            
+            <hr class="sidebar-divider my-0">
+            {% if user.access == 0 %}
+            <li class="nav-item active">
+                <a class="nav-link" href="/accounts/profile">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Profils</span></a>
+            </li>
+            {% endif %}
+
+			{% if user.access == 1 or user.access == 2 %}
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="{% url 'home' %}">
+                    <i class="fas fa-fw fa-graduation-cap"></i>
+                    <span>Skolas</span>
+                </a>
+			</li>
+            {% endif %}	
+			{% if user.access == 0 %}
+			<li class="nav-item">
+                <a class="nav-link collapsed" href="{% url 'school-update' user.id %}">
+                    <i class="fas fa-fw fa-graduation-cap"></i>
+                    <span>Ēdienkarte un Iestatījumi</span>
+                </a>
+            {% endif %}	
+                
+
+        </ul>
 
 
         <div id="content-wrapper" class="d-flex flex-column">
