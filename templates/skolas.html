@@ -98,7 +98,6 @@
                             </div>
                         </div>
                     </form>
-                    {% else %}
                     {% endif %}
 
                     <ul class="navbar-nav ml-auto">
@@ -186,7 +185,7 @@
   {% endfor %}
   {% endif %}
 
-{% elif user.access == 1 %}
+{% if user.access == 1 %}
   {% for el in students %}
     {% if user.novads == el.novads %}
       {% if el.access == 0 %}
