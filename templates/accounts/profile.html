@@ -47,15 +47,16 @@
 
             
             <hr class="sidebar-divider my-0">
-
+            {% if user.access == 0 %}
             <li class="nav-item active">
                 <a class="nav-link" href="/accounts/profile">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Profils</span></a>
             </li>
+            {% endif %}
 
 			{% if user.access == 1 or user.access == 2 %}
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="{% url 'home' %}">
                     <i class="fas fa-fw fa-graduation-cap"></i>
                     <span>Skolas</span>
